@@ -4,6 +4,16 @@ body {
     background-color: var(--color-background);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    line-height: 1.1;
+}
+
 input {
     outline: 0;
 }
@@ -29,8 +39,31 @@ button {
     background-color: transparent;
 }
 
+// Background color Class 
+.gmPrimary-bg {
+    background-color: var(--primary-color) !important;
+}
+.gmSecondary-bg{
+    background-color: var(--secondary-color) !important;
+}
+.gmShade-bg{
+    background-color: var(--color-shade-background) !important;
+}
+
+// Build For Svg Icon 
+.gm_icon_white {
+    fill: var(--color-white);
+
+    &>svg {
+        fill: var(--color-white);
+        & path{
+            fill: var(--color-white);
+        }
+    }
+}
+
 // Section Title 
-.section_heading {
+.gm_section_heading {
     position: relative;
     text-align: center;
 
@@ -70,7 +103,7 @@ button {
 
 
 // Button Style 
-.primary-btn {
+.gm_primary-btn {
     position: relative;
     padding: 19px 32px 20px;
     border-radius: 0;
@@ -94,11 +127,11 @@ button {
         height: 24px;
     }
 
-    &::after{
+    &::after {
         content: "";
         position: absolute;
-        right:0;
-        top:0;
+        right: 0;
+        top: 0;
         bottom: 0;
         width: 0;
         height: 100%;
@@ -106,12 +139,14 @@ button {
         z-index: -1;
         transition: 0.35s all;
     }
+
     &:hover {
-        &::after{
+        &::after {
             width: 100%;
-            left:0;
+            left: 0;
             right: auto;
         }
+
         color: var(--color-primary-button-text);
     }
 }

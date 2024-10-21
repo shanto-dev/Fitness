@@ -1,8 +1,99 @@
-.ur-icon-box {
-    h6 {
-        font-size: 16px;
+.gm_iconbox01 {
+    position: relative;
+    background-color: rgba(255, 255, 255, .10);
+    padding: 32px;
+    margin: 0;
+
+    @include screen-1400 {
+        padding: 26px;
     }
-    span {
-        color: var(--text-color);
+
+    &__content {
+        position: relative;
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 31px;
+            color: var(--color-white);
+            text-transform: uppercase;
+            margin-bottom: 4px;
+
+            @include screen-1400 {
+                font-size: 20px;
+                line-height: 27px;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 27px;
+            color: var(--color-white);
+            margin: 0;
+
+            @include screen-1400 {
+                font-size: 16px;
+                line-height: 25px;
+            }
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 0;
+        left: 32px;
+        width: 64px;
+        height: 64px;
+        @include displayFlex(inline-flex, center, center, column);
+        background-color: var(--color-yellow);
+
+        @include screen-1400 {
+            width: 54px;
+            height: 54px;
+            left: 24px;
+        }
+    }
+}
+
+.gm_iconbox01.gm_icon-left {
+    padding-left: 128px;
+
+    @include screen-1400 {
+        padding-left: 100px;
+    }
+
+    .gm_iconbox01__content {
+        text-align: left;
+    }
+
+    .gm_iconbox01__icon {
+        left: 32px;
+        right: auto;
+
+        @include screen-1400 {
+            left: 26px;
+        }
+    }
+}
+
+.gm_iconbox01.gm_icon-right {
+    padding-right: 128px;
+
+    @include screen-1400 {
+        padding-right: 100px;
+    }
+
+    .gm_iconbox01__content {
+        text-align: right;
+    }
+
+    .gm_iconbox01__icon {
+        right: 32px;
+        left: auto;
+
+        @include screen-1400 {
+            right: 26px;
+        }
     }
 }

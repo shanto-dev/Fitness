@@ -14,6 +14,7 @@ Version: 1.1.0
   --primary-color: #031520;
   --secondary-color: #FF5824;
   --text-color: #5D676D;
+  --color-white: #FFFFFF;
   --color-background: #FFFFFF;
   --color-shade-background: #F9F5F2;
   --color-subtitle-backgorund: rgba(255, 88, 36, 0.1);
@@ -44,12 +45,24 @@ Version: 1.1.0
   --color-badge-border:
   --payment-terms-background-color:
   --transition-base: all 0.3s;
+  --color-yellow: #F9C221;
+  --color-yellow-background: #F9C221;
 }
 
 body {
   margin: 0;
   font-family: var(--body-font);
   background-color: var(--color-background);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  line-height: 1.1;
 }
 
 input {
@@ -78,11 +91,33 @@ button {
   background-color: transparent;
 }
 
-.section_heading {
+.gmPrimary-bg {
+  background-color: var(--primary-color) !important;
+}
+
+.gmSecondary-bg {
+  background-color: var(--secondary-color) !important;
+}
+
+.gmShade-bg {
+  background-color: var(--color-shade-background) !important;
+}
+
+.gm_icon_white {
+  fill: var(--color-white);
+}
+.gm_icon_white > svg {
+  fill: var(--color-white);
+}
+.gm_icon_white > svg path {
+  fill: var(--color-white);
+}
+
+.gm_section_heading {
   position: relative;
   text-align: center;
 }
-.section_heading__subtitle {
+.gm_section_heading__subtitle {
   font-size: 18px;
   line-height: 27px;
   font-weight: 700;
@@ -96,7 +131,7 @@ button {
   text-align: center;
   text-transform: capitalize;
 }
-.section_heading__subtitle::before {
+.gm_section_heading__subtitle::before {
   content: "";
   position: absolute;
   top: 0;
@@ -105,7 +140,7 @@ button {
   width: 2px;
   background: var(--secondary-color);
 }
-.section_heading__title {
+.gm_section_heading__title {
   font-size: 56px;
   font-weight: 600;
   line-height: 72.8px;
@@ -113,7 +148,7 @@ button {
   text-transform: uppercase;
 }
 
-.primary-btn {
+.gm_primary-btn {
   position: relative;
   padding: 19px 32px 20px;
   border-radius: 0;
@@ -145,12 +180,12 @@ button {
           column-gap: 16px;
   z-index: 1;
 }
-.primary-btn > svg {
+.gm_primary-btn > svg {
   padding: 4px;
   width: 24px;
   height: 24px;
 }
-.primary-btn::after {
+.gm_primary-btn::after {
   content: "";
   position: absolute;
   right: 0;
@@ -163,10 +198,10 @@ button {
   -webkit-transition: 0.35s all;
   transition: 0.35s all;
 }
-.primary-btn:hover {
+.gm_primary-btn:hover {
   color: var(--color-primary-button-text);
 }
-.primary-btn:hover::after {
+.gm_primary-btn:hover::after {
   width: 100%;
   left: 0;
   right: auto;
@@ -218,6 +253,41 @@ h1, .h1, h2, .h2 {
 
 .pb-136 {
   padding-bottom: 136px;
+}
+
+.px-80 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.pt-80 {
+  padding-top: 80px;
+}
+
+.pb-80 {
+  padding-bottom: 80px;
+}
+
+.g-30,
+.gx-30 {
+  --bs-gutter-x: 30px;
+}
+@media (max-width: 1199.98px) {
+  .g-30,
+  .gx-30 {
+    --bs-gutter-x: 24px;
+  }
+}
+
+.g-30,
+.gy-30 {
+  --bs-gutter-y: 30px;
+}
+@media (max-width: 1199.98px) {
+  .g-30,
+  .gy-30 {
+    --bs-gutter-y: 24px;
+  }
 }
 
 /******************************* theme css **********************************/
@@ -1951,11 +2021,116 @@ h1, .h1, h2, .h2 {
   }
 }
 
-.ur-icon-box h6 {
-  font-size: 16px;
+.gm_iconbox01 {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 32px;
+  margin: 0;
 }
-.ur-icon-box span {
-  color: var(--text-color);
+@media (max-width: 1399.98px) {
+  .gm_iconbox01 {
+    padding: 26px;
+  }
+}
+.gm_iconbox01__content {
+  position: relative;
+}
+.gm_iconbox01__content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 31px;
+  color: var(--color-white);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+@media (max-width: 1399.98px) {
+  .gm_iconbox01__content h3 {
+    font-size: 20px;
+    line-height: 27px;
+  }
+}
+.gm_iconbox01__content p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  color: var(--color-white);
+  margin: 0;
+}
+@media (max-width: 1399.98px) {
+  .gm_iconbox01__content p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+.gm_iconbox01__icon {
+  position: absolute;
+  top: 0;
+  left: 32px;
+  width: 64px;
+  height: 64px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: var(--color-yellow);
+}
+@media (max-width: 1399.98px) {
+  .gm_iconbox01__icon {
+    width: 54px;
+    height: 54px;
+    left: 24px;
+  }
+}
+
+.gm_iconbox01.gm_icon-left {
+  padding-left: 128px;
+}
+@media (max-width: 1399.98px) {
+  .gm_iconbox01.gm_icon-left {
+    padding-left: 100px;
+  }
+}
+.gm_iconbox01.gm_icon-left .gm_iconbox01__content {
+  text-align: left;
+}
+.gm_iconbox01.gm_icon-left .gm_iconbox01__icon {
+  left: 32px;
+  right: auto;
+}
+@media (max-width: 1399.98px) {
+  .gm_iconbox01.gm_icon-left .gm_iconbox01__icon {
+    left: 26px;
+  }
+}
+
+.gm_iconbox01.gm_icon-right {
+  padding-right: 128px;
+}
+@media (max-width: 1399.98px) {
+  .gm_iconbox01.gm_icon-right {
+    padding-right: 100px;
+  }
+}
+.gm_iconbox01.gm_icon-right .gm_iconbox01__content {
+  text-align: right;
+}
+.gm_iconbox01.gm_icon-right .gm_iconbox01__icon {
+  right: 32px;
+  left: auto;
+}
+@media (max-width: 1399.98px) {
+  .gm_iconbox01.gm_icon-right .gm_iconbox01__icon {
+    right: 26px;
+  }
 }
 
 /****************** banner components ****************/
