@@ -1,0 +1,37 @@
+/*
+Theme Name: Fitness & Gym - eCommerce HTML Template
+Author: WebritoTheme
+Author URI: https://themeforest.net/user/webritotheme
+Tags: fitness, gym, uroan, ecommerce, blog, fashion products, online shop, ecommerce store
+Description: Fitness & Gym - An eCommerce HTML5 Template
+Version: 1.1.0
+*/
+
+/************************************** base css **************************************/
+@import 'base/variables';
+@import 'base/mixin';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/spacing';
+
+
+/******************************* theme css **********************************/
+@import 'theme/theme-class';
+@import 'theme/preloader';
+@import 'theme/animations';
+
+
+/******************************** components ******************************/
+@import 'components/header';
+@import 'components/preloader';
+@import 'components/buttons';
+@import 'components/footer';
+@import 'components/offcanvus';
+@import 'components/icon-box';
+@import 'components/banner';
+@import 'components/pagination';
+
+/****************************** page styles ******************************/
+@import 'pages/index-1';
+@import 'pages/index-2';
+@import 'pages/index-3';

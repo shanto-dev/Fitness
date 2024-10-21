@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    background-color: var(--color-background);
+}
+
+input {
+    outline: 0;
+}
+
+select {
+    outline: 0;
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+button {
+    border: 0;
+    background-color: transparent;
+}
+
+// Section Title 
+.section_heading {
+    position: relative;
+    text-align: center;
+
+    &__subtitle {
+        font-size: 18px;
+        line-height: 27px;
+        font-weight: 700;
+        color: var(--secondary-color);
+        padding: 4px 16px;
+        position: relative;
+        background: var(--color-subtitle-backgorund);
+        font-family: var(--body-font);
+        display: inline-block;
+        margin: 0 0 4px;
+        text-align: center;
+        text-transform: capitalize;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 2px;
+            background: var(--secondary-color);
+        }
+    }
+
+    &__title {
+        font-size: 56px;
+        font-weight: 600;
+        line-height: 72.8px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+
+// Button Style 
+.primary-btn {
+    position: relative;
+    padding: 19px 32px 20px;
+    border-radius: 0;
+    border: 0;
+    font-family: var(--body-font);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    background: var(--color-primary-button);
+    color: var(--color-primary-button-text);
+    text-transform: uppercase;
+    @include displayFlex(inline-flex, center, center, row);
+    column-gap: 16px;
+    z-index: 1;
+
+    &>svg {
+        padding: 4px;
+        width: 24px;
+        height: 24px;
+    }
+
+    &::after{
+        content: "";
+        position: absolute;
+        right:0;
+        top:0;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+        background: var(--color-primary-button-hover);
+        z-index: -1;
+        transition: 0.35s all;
+    }
+    &:hover {
+        &::after{
+            width: 100%;
+            left:0;
+            right: auto;
+        }
+        color: var(--color-primary-button-text);
+    }
+}
