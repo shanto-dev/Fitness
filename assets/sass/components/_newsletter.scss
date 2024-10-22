@@ -1,0 +1,110 @@
+// News Letter 01
+.gm_newsLetter {
+    position: relative;
+}
+
+.subsCribe-form {
+    position: relative;
+
+    & .emailIntpu {
+        position: relative;
+        width: calc(100% - 237px);
+
+        svg {
+            position: absolute;
+            top: 25px;
+            left: 25.65px;
+        }
+    }
+
+    & input[type="email"] {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 18px 18px 19px 64px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 27px;
+        width: 100%;
+    }
+
+    & input[type="email"]::placeholder {
+        color: var(--color-placeholder);
+    }
+
+    .form-group label {
+        position: relative;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+
+    .form-group label:before {
+        content: '';
+        -webkit-appearance: none;
+        background-color: transparent;
+        padding: 4px;
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        cursor: pointer;
+        margin-right: 12px;
+        width: 18px;
+        height: 18px;
+        background-color: var(--color-background);
+        top: -1px;
+    }
+
+    .form-group input:checked+label:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 5px;
+        left: 5.5px;
+        width: 7px;
+        height: 11px;
+        border: solid var(--secondary-color);
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .form-group input[type='checkbox'] {
+        padding: 0;
+        height: initial;
+        width: initial;
+        margin-bottom: 0;
+        display: none;
+        cursor: pointer;
+    }
+
+    button[type="submit"] {
+        color: var(--color-white);
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 25.2px;
+        letter-spacing: 0.05em;
+        text-align: left;
+        padding: 19px 96px 19px 32px;
+        border: 1px solid var(--secondary-color);
+        position: relative;
+        text-transform: uppercase;
+
+        span {
+            padding: 0;
+            background-color: var(--secondary-color);
+            width: 64px;
+            height: 64px;
+            @include displayFlex(inline-flex, center, center, column);
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        svg {
+            padding: 4px;
+            height: 24px;
+            width: 24px;
+        }
+    }
+}

@@ -47,7 +47,7 @@
 @mixin screen-1600 {
     @media (max-width: 1600px) {
         @content;
-    }
+    } 
 }
 @mixin screen-1700 {
     @media (max-width: 1700px) {

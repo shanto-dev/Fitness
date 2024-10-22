@@ -1,0 +1,107 @@
+.gm_blog_Items {
+    position: relative;
+
+    & .gm_blog_thumb {
+        position: relative;
+    }
+
+    & .gm_blog_meta {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        padding: 12px 24px;
+        background: var(--primary-color);
+        transform: translateX(-50%);
+        @include displayFlex(flex, center, center, row);
+        gap: 24px;
+        min-width: 318px;
+        transition: 0.3s all;
+
+        & a {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 27px;
+            text-align: left;
+            color: var(--color-white);
+            @include displayFlex(flex, center, center, row);
+            gap: 7.5px;
+            text-transform: capitalize;
+
+            & i {
+                font-size: 15px;
+
+            }
+
+            & svg {
+                stroke: var(--color-white);
+                stroke-width: .6px;
+            }
+        }
+    }
+
+    & .gm_blog_content {
+        position: relative;
+
+        h2 {
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 52px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+
+            a {
+                color: inherit;
+                font-size: inherit;
+            }
+
+            &:hover {
+                color: var(--secondary-color);
+            }
+        }
+    }
+
+    & .gm_blog-link {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 25px;
+        letter-spacing: 0.05em;
+        color: var(--text-color);
+        text-transform: uppercase;
+        @include displayFlex(inline-flex, center, center, row);
+        gap: 8px;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--text-color);
+            transition: 0.3s all;
+        }
+
+        & i {
+            font-size: 16px;
+            padding: 2px;
+            position: relative;
+            top: -1.5px;
+        }
+    }
+
+    &:hover {
+        & .gm_blog_meta {
+            background: var(--secondary-color);
+        }
+
+        & .gm_blog-link {
+            color: var(--secondary-color);
+
+            &::after {
+                background: var(--secondary-color);
+            }
+        }
+
+    }
+}

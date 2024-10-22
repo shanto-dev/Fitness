@@ -1,6 +1,9 @@
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6 {
-    color: var(--primary-color);
+    font-family: var(--heading-font);
+    line-height: 1.1;
+    color: var(--color-heading);
 }
+
 
 h1,.h1,h2,.h2 {
     font-family: var(--heading-font);
@@ -25,3 +28,8 @@ h1,.h1,h2,.h2 {
     }
 }
 
+
+p{
+    font-family: var(--body-font);
+    color: var(--text-color);
+}

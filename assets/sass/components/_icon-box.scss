@@ -1,3 +1,4 @@
+// Icon Box 01 
 .gm_iconbox01 {
     position: relative;
     background-color: rgba(255, 255, 255, .10);
@@ -95,5 +96,87 @@
         @include screen-1400 {
             right: 26px;
         }
+    }
+}
+
+// Icon Box 02 
+.gm_iconbox02 {
+    position: relative;
+    background-color: var(--color-background);
+    padding: 0;
+    margin: 0;
+
+    @include screen-1400 {
+        padding: 26px;
+    }
+
+    &__content {
+        position: relative;
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 31px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+
+            @include screen-1400 {
+                font-size: 20px;
+                line-height: 27px;
+            }
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 27px;
+            margin: 0;
+
+            @include screen-1400 {
+                font-size: 16px;
+                line-height: 25px;
+            }
+        }
+    }
+
+    &__icon {
+        width: 64px;
+        height: 64px;
+        @include displayFlex(inline-flex, center, center, column);
+        background-color: rgba(255, 88, 36,.1);
+        margin-bottom: 24px;
+
+        @include screen-1400 {
+            width: 54px;
+            height: 54px;
+        }
+    }
+}
+
+.gm_iconbox02.gm_icon-left {
+
+    .gm_iconbox02__content {
+        text-align: left;
+    }
+    .gm_iconbox02__icon {
+        text-align: left;
+    }
+}
+.gm_iconbox02.gm_icon-center {
+    text-align: center;
+    .gm_iconbox02__content {
+        text-align: center;
+    }
+    .gm_iconbox02__icon {
+        text-align: center;
+    }
+}
+.gm_iconbox02.gm_icon-right {
+    text-align: right;
+    .gm_iconbox02__content {
+        text-align: right;
+    }
+    .gm_iconbox02__icon {
+        text-align: right;
     }
 }
