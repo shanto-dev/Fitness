@@ -1,8 +1,13 @@
 /*************** footer section start *****************/
-.footer-widget {
-    margin-bottom: 40px;
-    p {
-        color: var(--text-color);
+.widget{
+    position: relative;
+}
+.gm_about_widget{
+    position: relative;
+    & p{
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 27px;
     }
 }
 .footer-social {

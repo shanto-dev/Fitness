@@ -5,6 +5,7 @@ body {
 }
 
 @media(min-width: 1400px) {
+
     .container,
     .container-lg,
     .container-md,
@@ -40,8 +41,12 @@ button {
     background-color: transparent;
 }
 
-ins{
+ins {
     text-decoration: none;
+}
+
+.logo {
+    display: inline-block;
 }
 
 // Background color Class 
@@ -171,5 +176,34 @@ ins{
         }
 
         color: var(--color-primary-button-text);
+    }
+}
+
+
+// Site link button 
+.gm_site_link {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+    color: var(--secondary-color);
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        left: 0;
+        bottom: 0;
+        background: var(--secondary-color);
+        transition: 0.3s all;
+    }
+
+    &:hover {
+        color: var(--primary-color);
+
+        &::after {
+            background: var(--primary-color);
+        }
     }
 }
