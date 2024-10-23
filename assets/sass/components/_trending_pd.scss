@@ -1,0 +1,115 @@
+// Trending Product 
+.gm_trendingItems {
+    position: relative;
+}
+
+.gm_trendingItem {
+    padding: 15px 16px;
+    background: var(--color-background);
+    @include displayFlex(flex, start, center, row);
+    gap: 20px;
+    border: 1px solid var(--color-border);
+
+    & .gm_trendingItem__thumb {
+        flex: 0 0 auto;
+        width: 132px;
+        height: 150px;
+        background: var(--color-shade-background);
+        padding: 10px;
+        @include displayFlex(flex, center, center, column);
+
+        & img {
+            max-width: 100%;
+            width: auto;
+            max-height: 100%;
+            height: auto;
+        }
+    }
+
+    & .gm_trendingItem__meta {
+        & a {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            text-align: left;
+            color: var(--text-color);
+            margin-bottom: 2px;
+
+            &:hover {
+                color: var(--secondary-color);
+            }
+        }
+    }
+
+    & h2 {
+        font-family: var(--body-font);
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
+        text-align: left;
+        margin-bottom: 6px;
+
+        & a {
+            color: inherit;
+            font-size: inherit;
+        }
+        &:hover{
+            color: var(--secondary-color);
+        }
+    }
+
+    & .gm_trendingItem__price {
+        @include displayFlex(flex, space-between, center, row);
+        position: relative;
+    }
+
+    & .gm_pi01Price {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 27px;
+        text-align: left;
+        color: var(--color-heading);
+        @include displayFlex(flex, space-between, center, row);
+
+        & ins {
+            margin-right: 8px;
+            text-decoration: none;
+        }
+
+        & del {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            text-align: left;
+            color: var(--text-color);
+        }
+    }
+
+    & .gm_trending_cart {
+        width: 40px;
+        height: 40px;
+        background: var(--color-shade-background);
+        @include displayFlex(flex, center, center, column);
+        border: 1px solid var(--color-border);
+        transition: 0.3s all;
+
+        & svg {
+            transition: 0.3s all;
+        }
+
+        &:hover {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+
+            svg {
+                fill: var(--color-white);
+
+                path {
+                    stroke: var(--color-white);
+                    fill: var(--color-white);
+                    stroke-width: .2px;
+                }
+            }
+        }
+    }
+}

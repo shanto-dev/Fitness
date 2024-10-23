@@ -1,0 +1,76 @@
+// Lookbook 02 
+.gm_lookbook02 {
+    position: relative;
+    background: var(--primary-color);
+
+    &__content {
+        padding: 40px 40px 24px;
+
+        & h4 {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 25px;
+            letter-spacing: 0.05em;
+            color: var(--color-yellow);
+            text-transform: uppercase;
+            font-family: var(--body-font);
+            margin-bottom: 4px;
+        }
+
+        & h2 {
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 52px;
+            text-transform: uppercase;
+            color: var(--color-white);
+            margin-bottom: 24px;
+        }
+
+        & a {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 25px;
+            letter-spacing: 0.05em;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            @include displayFlex(flex, center, center, row);
+            gap: 8px;
+
+            & svg {
+                padding: 4px;
+                width: 24px;
+                height: 24px;
+                fill: var(--secondary-color);
+                transition: 0.3s all;
+
+                & path {
+                    stroke-width: .6px;
+                    stroke: var(--secondary-color);
+                    fill: var(--secondary-color);
+                    transition: 0.3s all;
+                }
+            }
+
+            &:hover {
+                color: var(--color-white);
+
+                & svg {
+                    fill: var(--color-white);
+
+                    & path {
+                        fill: var(--color-white);
+                        stroke: var(--color-white);
+                    }
+                }
+            }
+        }
+    }
+
+    &__img {
+        position: relative;
+        background-image: url(/assets/images/lookbook/lookbook-02bg.png);
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: center;
+    }
+}
