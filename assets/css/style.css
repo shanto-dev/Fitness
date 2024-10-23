@@ -18,7 +18,7 @@ Version: 1.1.0
   --color-background: #FFFFFF;
   --color-shade-background: #F9F5F2;
   --color-subtitle-backgorund: rgba(255, 88, 36, 0.1);
-  --gradient-background: ;
+  --gradient-background: linear-gradient(180deg, rgba(3, 21, 32, 0) 0%, rgba(3, 21, 32, 0.4) 100%);
   --color-accent: #FF5824;
   --color-foreground: ;
   --color-heading: #031520;
@@ -2402,6 +2402,83 @@ p {
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center; }
+
+.gm_collections_slides {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 66px; }
+  .gm_collections_slides .gm_collection_pagi {
+    bottom: 0;
+    top: auto;
+    height: 2px;
+    background: rgba(3, 21, 32, 0.1); }
+    .gm_collections_slides .gm_collection_pagi .swiper-pagination-progressbar-fill {
+      background: var(--secondary-color); }
+
+.gm_collection_item {
+  position: relative;
+  z-index: 2;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
+  overflow: hidden; }
+  .gm_collection_item:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(3, 21, 32, 0.3);
+    z-index: 1;
+    opacity: 0;
+    -webkit-transition: 0.3s all;
+    -o-transition: 0.3s all;
+    transition: 0.3s all; }
+  .gm_collection_item .gm_collection_content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 16px 24px 16px 16px;
+    z-index: 2;
+    -webkit-transition: 0.4s all;
+    -o-transition: 0.4s all;
+    transition: 0.4s all; }
+    .gm_collection_item .gm_collection_content h2 {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 31.2px;
+      color: var(--color-white);
+      margin: 0;
+      -webkit-transition: 0.3s all;
+      -o-transition: 0.3s all;
+      transition: 0.3s all; }
+      .gm_collection_item .gm_collection_content h2 a {
+        color: inherit;
+        font-family: inherit; }
+        .gm_collection_item .gm_collection_content h2 a:hover {
+          color: var(--secondary-color); }
+    .gm_collection_item .gm_collection_content p {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+      text-align: left;
+      color: var(--color-white);
+      margin: 0;
+      -webkit-transition: 0.3s all;
+      -o-transition: 0.3s all;
+      transition: 0.3s all; }
+  .gm_collection_item:hover .gm_collection_content {
+    background: var(--color-background);
+    -webkit-transform: translate(-16px, 16px);
+    -ms-transform: translate(-16px, 16px);
+    transform: translate(-16px, 16px); }
+    .gm_collection_item:hover .gm_collection_content h2 {
+      color: var(--color-heading); }
+    .gm_collection_item:hover .gm_collection_content p {
+      color: var(--text-color); }
+  .gm_collection_item:hover::after {
+    opacity: 1; }
 
 .gm_blog_Items {
   position: relative; }

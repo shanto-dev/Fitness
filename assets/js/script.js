@@ -39,3 +39,14 @@ function gm_stretch() {
 }
 
 gm_stretch();
+
+
+// Collection Slide 
+var swiper = new Swiper(".gm_collections_slides", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    pagination: {
+      el: ".gm_collection_pagi",
+      type: "progressbar",
+    },
+  });
