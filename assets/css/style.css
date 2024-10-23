@@ -44,7 +44,8 @@ Version: 1.1.0
   --payment-terms-background-color: ;
   --transition-base: all 0.3s;
   --color-yellow: #F9C221;
-  --color-yellow-background: #F9C221; }
+  --color-yellow-background: #F9C221;
+  --color-lookbook-bg: #FFEAD1; }
 
 body {
   margin: 0;
@@ -81,6 +82,9 @@ ul {
 button {
   border: 0;
   background-color: transparent; }
+
+ins {
+  text-decoration: none; }
 
 .gmPrimary-bg {
   background-color: var(--primary-color) !important; }
@@ -307,6 +311,9 @@ p {
     .g-30,
     .gy-30 {
       --bs-gutter-y: 24px; } }
+
+.gy-40 {
+  --bs-gutter-y: 40px; }
 
 /******************************* theme css **********************************/
 /******************************** components ******************************/
@@ -1920,6 +1927,197 @@ p {
       font-weight: 500;
       line-height: 27px; }
 
+.gm_productItem01 {
+  position: relative; }
+
+.gm_pd01Thumb {
+  width: 100%;
+  height: 340px;
+  background: var(--color-shade-background);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 16px;
+  overflow: hidden;
+  position: relative; }
+  .gm_pd01Thumb img {
+    max-width: 100%;
+    max-height: 100%; }
+
+.gm_productLabels {
+  position: absolute;
+  top: 10px;
+  left: 10px; }
+  .gm_productLabels .pdNew {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    background: var(--secondary-color);
+    color: var(--color-white);
+    padding: 2px 8px;
+    text-transform: uppercase; }
+
+.gm_pd01Actions {
+  position: absolute;
+  bottom: -10px;
+  right: 16px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all; }
+  .gm_pd01Actions a {
+    width: 48px;
+    height: 48px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background: var(--primary-color);
+    opacity: 0;
+    visibility: hidden; }
+    .gm_pd01Actions a i {
+      font-size: 19px;
+      color: var(--color-white); }
+    .gm_pd01Actions a svg {
+      fill: var(--color-white); }
+      .gm_pd01Actions a svg path {
+        fill: var(--color-white);
+        stroke-width: 0.2px;
+        stroke: var(--color-white); }
+    .gm_pd01Actions a:hover {
+      background: var(--secondary-color); }
+
+.gm_productItem01:hover .gm_pd01Actions {
+  bottom: 16px; }
+  .gm_productItem01:hover .gm_pd01Actions a {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
+
+.gm_pd01Details h2 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: left;
+  margin-bottom: 8px; }
+  .gm_pd01Details h2 a {
+    color: inherit;
+    font-family: inherit; }
+    .gm_pd01Details h2 a:hover {
+      color: var(--secondary-color); }
+
+.gm_pd01PricRevw_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+
+.gm_pd01Price {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  text-align: left;
+  color: var(--color-heading);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+  .gm_pd01Price ins {
+    margin-right: 8px;
+    text-decoration: none; }
+  .gm_pd01Price del {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    color: var(--text-color); }
+
+.gm_pd01Reviws {
+  position: relative; }
+  .gm_pd01Reviws .star-rating {
+    font-family: 'Font Awesome 6 Free';
+    float: none;
+    overflow: hidden;
+    position: relative;
+    height: auto;
+    line-height: 1;
+    font-size: 19px;
+    width: auto;
+    margin: 0; }
+    .gm_pd01Reviws .star-rating::before {
+      content: "\f005\f005\f005\f005\f005";
+      font-weight: 400;
+      color: #ffb400;
+      float: left;
+      position: relative;
+      display: inline-block; }
+    .gm_pd01Reviws .star-rating span {
+      overflow: hidden;
+      float: left;
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 90%;
+      height: 100%; }
+      .gm_pd01Reviws .star-rating span:after {
+        content: "\f005\f005\f005\f005\f005";
+        font-weight: 900;
+        color: #ffb400;
+        top: 0;
+        position: absolute;
+        left: 0; }
+
 .gm_trendingItems {
   position: relative; }
 
@@ -1986,8 +2184,8 @@ p {
     .gm_trendingItem h2 a {
       color: inherit;
       font-size: inherit; }
-    .gm_trendingItem h2:hover {
-      color: var(--secondary-color); }
+      .gm_trendingItem h2 a:hover {
+        color: var(--secondary-color); }
   .gm_trendingItem .gm_trendingItem__price {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2065,6 +2263,74 @@ p {
           stroke: var(--color-white);
           fill: var(--color-white);
           stroke-width: .2px; }
+
+.gm_lookbook01 {
+  position: relative;
+  background: var(--color-lookbook-bg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+  .gm_lookbook01__img {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 280px;
+    background-image: url(../images/lookbook/lookbook-01-shape.png);
+    background-size: auto;
+    background-position: bottom 23px right 96px;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 2; }
+    .gm_lookbook01__img::before {
+      position: absolute;
+      content: "";
+      width: 158px;
+      height: 158px;
+      top: 24px;
+      right: 38px;
+      border-radius: 50%;
+      background: #F4D6B2;
+      z-index: -1; }
+  .gm_lookbook01__content {
+    padding: 49px 40px 50px 50px; }
+    .gm_lookbook01__content h4 {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 31px;
+      text-transform: uppercase;
+      color: var(--secondary-color);
+      margin-bottom: 10px; }
+    .gm_lookbook01__content h2 {
+      font-size: 56px;
+      font-weight: 600;
+      line-height: 73px;
+      text-transform: uppercase;
+      margin-bottom: 10px; }
+    .gm_lookbook01__content .gm_primary-btn {
+      margin-top: 40px;
+      padding: 16px 20px 15px;
+      gap: 8px; }
+      .gm_lookbook01__content .gm_primary-btn i {
+        font-size: 16px;
+        top: -1px;
+        position: relative; }
+
+.gm_lookbookPrice {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  color: var(--text-color);
+  display: inline-block; }
 
 .gm_lookbook02 {
   position: relative;
