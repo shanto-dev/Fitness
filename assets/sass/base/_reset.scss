@@ -15,7 +15,8 @@ body {
         max-width: 1314px;
     }
 }
-.container-large{
+
+.container-large {
     max-width: 1600px;
     width: 100%;
     margin: 0 auto;
@@ -51,6 +52,14 @@ ins {
     text-decoration: none;
 }
 
+svg {
+    transform: 0.3s all;
+
+    & path {
+        transform: 0.3s all;
+    }
+}
+
 .logo {
     display: inline-block;
 }
@@ -67,7 +76,8 @@ ins {
 .gmShade-bg {
     background-color: var(--color-shade-background) !important;
 }
-.primary-bg-color{
+
+.primary-bg-color {
     background: var(--primary-bg-color);
 }
 

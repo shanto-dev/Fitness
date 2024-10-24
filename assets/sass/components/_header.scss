@@ -198,7 +198,8 @@
     text-align: center;
 
     &>ul {
-        display: inline-block;
+        @include displayFlex(flex, center, center, row);
+        gap: 44px;
 
         &>li {
             &>a {
@@ -207,17 +208,16 @@
         }
     }
 
+
     ul {
         text-align: left;
-        @include displayFlex(flex, center, center, row);
-        gap: 44px;
 
         li {
             display: inline-block;
 
             a {
                 display: block;
-                padding: 30px 25px;
+                padding: 32px 25px;
                 color: var(--color-white);
                 font-size: 18px;
                 font-weight: 600;
@@ -233,7 +233,7 @@
                     position: absolute;
                     font-family: 'FontAwesome';
                     right: 5px;
-                    top: 32px;
+                    top: 35px;
                     font-size: 13px;
                     color: var(--color-white);
                     transition: var(--transition-base);
@@ -358,9 +358,10 @@
             }
 
             .column-title {
-                font-size: 14px;
+                font-size: 15px;
                 text-transform: uppercase;
                 margin-bottom: 15px;
+                font-weight: 700;
             }
 
             .pages-list {
@@ -370,8 +371,8 @@
                     a {
                         padding: 9px 0;
                         color: var(--primary-color);
-                        font-weight: 300;
-                        font-size: 15px;
+                        font-weight: 500;
+                        font-size: 14px;
 
                         &:hover {
                             color: var(--secondary-color);
@@ -394,6 +395,39 @@
     }
 }
 
+// Header Right Side 
+.gm_header_right {
+    gap: 52px;
+
+    &>div {
+        +div {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: -24px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1px;
+                height: 20px;
+                background-color: var(--border-color);
+            }
+        }
+    }
+
+    @include screen-1460 {
+        &>div {
+            +div {
+                &::before {
+                    left: -7px;
+                }
+            }
+        }
+    }
+}
+
+// Cart & Wishlist count
 .cart_count {
     font-size: 12px;
     font-weight: 600;
@@ -401,18 +435,35 @@
     color: var(--color-white);
     background: var(--secondary-color);
     padding: 1px 5px;
-
+    position: absolute;
+    right: -12px;
+    top: 0;
 }
 
+// user 
 .gm_user_links {
+    padding: 23.5px 0;
+
     button {
         color: var(--color-white);
         font-size: 14px;
-        padding: 30px 15px;
+        padding: 9px;
+        width: 42px;
+        height: 42px;
         transition: var(--transition-base);
+        background: rgba(255, 255, 255, .1);
+        @include displayFlex(flex, center, center, column);
 
         &:hover {
             color: var(--secondary-color);
+
+            svg {
+                fill: var(--secondary-color);
+
+                & path {
+                    fill: var(--secondary-color);
+                }
+            }
         }
     }
 
@@ -460,16 +511,62 @@
     }
 }
 
-.user-cart {
-    padding: 28px 0;
+// Whishlist 
+.user-wishlist {
+    position: relative;
+    padding: 23.5px 0;
 
-    .cart-btn {
-        color: var(--color-white);
-        font-size: 14px;
-        transition: var(--transition-base);
+    & a {
+        display: inline-block;
+        position: relative;
+        width: 42px;
+        height: 42px;
+        background: rgba(255, 255, 255, .1);
+        padding: 9px;
+        @include displayFlex(flex, center, center, column);
 
         &:hover {
             color: var(--secondary-color);
+
+            svg {
+                fill: var(--secondary-color);
+
+                & path {
+                    fill: var(--secondary-color);
+                }
+            }
+        }
+    }
+}
+
+// Cart 
+.user-cart {
+    position: relative;
+    padding: 23.5px 0;
+    padding-right: 12px;
+
+    .cart-btn {
+        color: var(--color-white);
+        font-size: 16px;
+        transition: var(--transition-base);
+        display: inline-block;
+        width: 42px;
+        height: 42px;
+        background: rgba(255, 255, 255, .1);
+        padding: 9px;
+        @include displayFlex(flex, center, center, column);
+        position: relative;
+
+        &:hover {
+            color: var(--secondary-color);
+
+            svg {
+                fill: var(--secondary-color);
+
+                & path {
+                    fill: var(--secondary-color);
+                }
+            }
 
         }
     }
@@ -501,34 +598,6 @@
     }
 }
 
-.gm_header_right {
-    &>div {
-        +div {
-            position: relative;
-
-            &::before {
-                content: '';
-                position: absolute;
-                left: -24px;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 1px;
-                height: 20px;
-                background-color: var(--border-color);
-            }
-        }
-    }
-
-    @include screen-1460 {
-        &>div {
-            +div {
-                &::before {
-                    left: -7px;
-                }
-            }
-        }
-    }
-}
 
 
 /*************** header style 2 *****************/
