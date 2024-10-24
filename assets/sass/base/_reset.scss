@@ -206,6 +206,7 @@ svg {
     line-height: 27px;
     color: var(--secondary-color);
     position: relative;
+    display: inline-block;
 
     &::after {
         position: absolute;

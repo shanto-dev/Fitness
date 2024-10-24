@@ -59,13 +59,13 @@
         font-size: 16px;
         font-weight: 500;
         line-height: 24px;
-        color: var(--color-white);
+        color: rgba(255, 255, 255, .7);
         @include displayFlex(flex, start, center, row);
         gap: 8px;
 
         & a {
             display: inline-block;
-            color: var(--color-white);
+            color: rgba(255, 255, 255, .7);
 
             &:hover {
                 color: var(--secondary-color);
@@ -79,8 +79,8 @@
 
             & path {
                 stroke-width: .2px;
-                fill: var(--color-white);
-                stroke: var(--color-white);
+                fill: rgba(255, 255, 255, .7);
+                stroke: rgba(255, 255, 255, .7);
             }
         }
     }
@@ -122,7 +122,7 @@
         font-size: 16px;
         font-weight: 500;
         line-height: 24px;
-        color: var(--color-white);
+        color: rgba(255, 255, 255, .7);
         @include displayFlex(flex, start, center, row);
         gap: 12px;
 
@@ -130,6 +130,12 @@
             padding: 1px .5px;
             width: 20px;
             height: 20px;
+
+            & path {
+                stroke-width: .2px;
+                fill: rgba(255, 255, 255, .7);
+                stroke: rgba(255, 255, 255, .7);
+            }
         }
     }
 }
@@ -139,7 +145,7 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
-    color: var(--color-white);
+    color: rgba(255, 255, 255, .7);
     @include displayFlex(flex, start, center, row);
     gap: 2px;
 
@@ -147,6 +153,12 @@
         padding: 1px .5px;
         width: 20px;
         height: 20px;
+
+        & path {
+            stroke-width: .2px;
+            fill: rgba(255, 255, 255, .7);
+            stroke: rgba(255, 255, 255, .7);
+        }
     }
 
     & select {
@@ -155,7 +167,7 @@
         line-height: 24px;
         text-align: left;
         background: transparent;
-        color: var(--color-white);
+        color: rgba(255, 255, 255, .7);
 
         & option {
             color: var(--primary-color);
@@ -166,6 +178,7 @@
 // Header Main 
 .gm_header_wrapper {
     position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, .15);
 
     & .logo {
         position: relative;
