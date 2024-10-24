@@ -3,6 +3,7 @@
 .gm_topbar {
     position: relative;
     background-color: var(--color-dark-light);
+    overflow: hidden;
 }
 
 .gm_tbFRow {
@@ -43,7 +44,7 @@
         content: "";
         right: 0;
         top: 0;
-        width: 300%;
+        width: 1000%;
         height: 100%;
         background: var(--secondary-color);
         z-index: -1;
@@ -176,7 +177,7 @@
             content: "";
             right: 0;
             top: 0;
-            width: 300%;
+            width: 1000%;
             height: 100%;
             background: rgba(255, 255, 255, .1);
             z-index: -1;
