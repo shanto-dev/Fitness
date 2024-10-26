@@ -1,4 +1,4 @@
-.mx-32 {
+.my-32 {
     margin-top: 32px;
     margin-bottom: 32px;
 }
@@ -11,7 +11,7 @@
     margin-bottom: 32px !important;
 }
 
-.mx-40 {
+.my-40 {
     margin-top: 40px;
     margin-bottom: 40px;
 }
@@ -24,7 +24,7 @@
     margin-bottom: 40px !important;
 }
 
-.mx-48 {
+.my-48 {
     margin-top: 48px;
     margin-bottom: 48px;
 }
@@ -37,7 +37,7 @@
     margin-bottom: 48px !important;
 }
 
-.mx-64 {
+.my-64 {
     margin-top: 64px;
     margin-bottom: 64px;
 }
@@ -50,7 +50,7 @@
     margin-bottom: 64px !important;
 }
 
-.px-72 {
+.py-72 {
     padding-top: 72px;
     padding-bottom: 72px;
 }
@@ -63,7 +63,7 @@
     padding-bottom: 72px;
 }
 
-.px-80 {
+.py-80 {
     padding-top: 80px;
     padding-bottom: 80px;
 }
@@ -76,7 +76,20 @@
     padding-bottom: 80px;
 }
 
-.px-136 {
+.py-96 {
+    padding-top: 96px;
+    padding-bottom: 96px;
+}
+
+.pt-96 {
+    padding-top: 96px;
+}
+
+.pb-96 {
+    padding-bottom: 96px;
+}
+
+.py-136 {
     padding-top: 136px;
     padding-bottom: 136px;
 }

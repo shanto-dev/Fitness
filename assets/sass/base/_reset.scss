@@ -115,7 +115,6 @@ svg {
         font-family: var(--body-font);
         display: inline-block;
         margin: 0 0 4px;
-        text-align: center;
         text-transform: capitalize;
 
         &::before {
@@ -142,7 +141,6 @@ svg {
         font-size: 56px;
         font-weight: 600;
         line-height: 72.8px;
-        text-align: center;
         text-transform: uppercase;
         margin: 0;
     }
@@ -224,6 +222,54 @@ svg {
 
         &::after {
             background: var(--primary-color);
+        }
+    }
+}
+
+// Section Divider 
+.gm_sectionDivider {
+    border-bottom: 1px solid rgba(3, 21, 32, .1);
+}
+
+
+// Gm Countdown Timer 
+.gm_countdown {
+    position: relative;
+
+    & ul {
+        @include displayFlex(inline-flex, center, center, row);
+        padding: 16px;
+        background: var(--secondary-color);
+
+        & li {
+            @include displayFlex(flex, center, center, column);
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 52px;
+            color: #0D0D0D;
+            padding: 6px 10px;
+            min-width: 75px;
+            background: var(--color-background);
+
+            & span {
+                display: inline-block;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 24px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+        }
+        & .gm_timerSeparator{
+            background: transparent;
+            padding: 0;
+            min-width: unset;
+            padding: 13px;
+            color: var(--color-white);
+            & span{
+                display: inline-block;
+                font-size: 27px;
+             }
         }
     }
 }
