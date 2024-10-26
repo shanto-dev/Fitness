@@ -76,6 +76,22 @@ var swiper = new Swiper('.gm_brand_slider ', {
     },
 });
 
+
+// Collection Product carousel
+var swiper = new Swiper('.gm_collection_slider ', {
+    loop: true,
+    slidesPerView: 3,
+    spaceBetween: 30,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    navigation: {
+        nextEl: '.gm_collection-next',
+        prevEl: '.gm_collection-prev',
+    },
+});
+
 // Countdown Timer 
 document.addEventListener("DOMContentLoaded", () => {
     const offerTimer = document.querySelector(".gm_offer_timer");
