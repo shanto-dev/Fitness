@@ -4,6 +4,17 @@
 
     & .gm_blog_thumb {
         position: relative;
+
+        & img {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        @include large-screen {
+            &.mb-32 {
+                margin-bottom: 24px !important;
+            }
+        }
     }
 
     & .gm_blog_meta {
@@ -37,6 +48,24 @@
                 stroke: var(--color-white);
                 stroke-width: .6px;
             }
+
+            @include large-screen {
+                font-size: 16px;
+
+                & svg {
+                    width: 16px;
+                }
+            }
+        }
+
+        @include large-screen {
+            min-width: 100%;
+            padding: 12px 15px;
+            gap: 18px;
+        }
+
+        @include screen-992 {
+            min-width: 290px;
         }
     }
 
@@ -57,6 +86,17 @@
 
             &:hover {
                 color: var(--secondary-color);
+            }
+
+            @include screen-1400 {
+                font-size: 36px;
+                line-height: 48px;
+            }
+
+            @include large-screen {
+                font-size: 30px;
+                line-height: 42px;
+                margin-bottom: 18px;
             }
         }
     }
@@ -89,6 +129,11 @@
             position: relative;
             top: -1.5px;
         }
+
+        @include screen-992 {
+            font-size: 16px;
+            line-height: 23px;
+        }
     }
 
     &:hover {
@@ -104,6 +149,12 @@
             }
         }
 
+    }
+}
+
+.blogGridRow {
+    @include screen-992 {
+        --bs-gutter-y: 50px;
     }
 }
 
@@ -142,6 +193,9 @@
 
             & svg {
                 fill: var(--text-color);
+                transition: 0.3s all;
+                position: relative;
+                top: -1px;
 
                 & path {
                     stroke: var(--text-color);
@@ -191,6 +245,7 @@
             line-height: 27px;
             color: var(--text-color);
             margin-bottom: 32px;
+            transition: var(--transition-base);
         }
     }
 
@@ -210,6 +265,48 @@
     }
 
     &:hover {
-        background: rgba(249, 245, 242, .8);
+        background: rgba(3, 21, 32, .8);
+
+        & .gm_blog_meta {
+            & a {
+                color: rgba(255, 255, 255, .7);
+
+                &:hover {
+                    color: var(--secondary-color);
+                }
+            }
+
+            & svg {
+                fill: rgba(255, 255, 255, .7);
+
+                & path {
+                    fill: rgba(255, 255, 255, .7);
+                }
+            }
+        }
+
+        & .gm_blog_content {
+            & h2 {
+                color: var(--color-white);
+            }
+
+            & p {
+                color: rgba(255, 255, 255, .7);
+            }
+        }
+
+        & .gm_primary-btn {
+            background: transparent;
+            color: var(--color-white);
+            border-color: var(--color-white);
+
+            &::after {
+                background: var(--secondary-color);
+            }
+
+            &:hover {
+                border-color: var(--secondary-color);
+            }
+        }
     }
 }

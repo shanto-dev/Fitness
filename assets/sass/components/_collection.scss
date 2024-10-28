@@ -1,3 +1,7 @@
+.gm_collection_carousel {
+    overflow: hidden;
+}
+
 // Collection Slider 
 .gm_collections_slides {
     position: relative;
@@ -166,5 +170,13 @@
 }
 
 .gm_collection_slider {
+    overflow: hidden;
+    margin-right: -175px;
+
+    @include screenUp-1600 {
+        margin-right: -135px;
+    }
+}
+.gm_testimonial_stretch {
     overflow: hidden;
 }

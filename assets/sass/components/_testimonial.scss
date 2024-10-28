@@ -1,3 +1,15 @@
+.gm_testimonial_cnt{
+    background: var(--color-shade-background);
+    padding: 40px;
+}
+.gm_testi_author{
+    margin: 6px 40 0;
+}
+
+
+
+
+
 .gm_testimonial02 {
     & .gm_section_heading__subtitle {
         background: rgba(255, 255, 255, 0.1);
@@ -5,7 +17,7 @@
 }
 
 // Testimonial Two 
-.gm_testimonial_cnt {
+.gm_testimonial_cnt02 {
     padding: 32px 32px 34px;
     background: var(--color-background);
 
@@ -15,8 +27,6 @@
         line-height: 30px;
         margin-bottom: 24px;
     }
-
-
 }
 
 .gm_testi_review {
@@ -59,7 +69,7 @@
 
 }
 
-.gm_testi_author {
+.gm_testi_author02 {
     padding: 0;
     padding-left: 64px;
     position: relative;

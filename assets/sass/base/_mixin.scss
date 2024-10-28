@@ -49,6 +49,12 @@
         @content;
     } 
 }
+
+@mixin screenUp-1600 {
+    @media (min-width: 1601px) {
+        @content;
+    } 
+}
 @mixin screen-1700 {
     @media (max-width: 1700px) {
         @content;

@@ -99,6 +99,14 @@ svg {
     }
 }
 
+.gmBgImage{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: scroll;
+    overflow: hidden;
+}
+
 // Section Title 
 .gm_section_heading {
     position: relative;
@@ -143,6 +151,11 @@ svg {
         line-height: 72.8px;
         text-transform: uppercase;
         margin: 0;
+
+        @include large-screen {
+            font-size: 48px;
+            line-height: 65px;
+        }
     }
 }
 
@@ -193,6 +206,75 @@ svg {
         }
 
         color: var(--color-primary-button-text);
+    }
+}
+
+
+// Secondary Button Style 
+.gm_secondary-btn {
+    position: relative;
+    padding: 0;
+    border-radius: 0;
+    border: 1px solid var(--color-secondary-button-outline);
+    font-family: var(--body-font);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    background: transparent;
+    color: var(--color-secondary-button-text);
+    text-transform: uppercase;
+    @include displayFlex(inline-flex, center, center, row);
+    column-gap: 0;
+    z-index: 1;
+
+    & span.btn_text {
+        display: inline-block;
+        padding: 18px 31px 19px;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        letter-spacing: inherit;
+    }
+
+    & span.btn_icon {
+        padding: 10px;
+        background: var(--color-secondary-button-hover);
+        display: block;
+        width: 63px;
+        height: 62px;
+        @include displayFlex(flex, center, center, row);
+    }
+
+    & svg {
+        padding: 4px;
+        width: 24px;
+        height: 24px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+        background: var(--color-secondary-button-hover);
+        z-index: -1;
+        transition: 0.35s all;
+    }
+
+    &:hover {
+        border-color: var(--color-secondary-button-outline-hover);
+        color: var(--color-secondary-button-hover-text);
+
+        &::after {
+            width: 100%;
+            left: 0;
+            right: auto;
+        }
     }
 }
 
@@ -260,16 +342,18 @@ svg {
                 text-transform: uppercase;
             }
         }
-        & .gm_timerSeparator{
+
+        & .gm_timerSeparator {
             background: transparent;
             padding: 0;
             min-width: unset;
             padding: 13px;
             color: var(--color-white);
-            & span{
+
+            & span {
                 display: inline-block;
                 font-size: 27px;
-             }
+            }
         }
     }
 }

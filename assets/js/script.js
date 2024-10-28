@@ -1,47 +1,64 @@
-// Strech Image 
+/*==================================
+* Strech Image 
+==================================*/
 function gm_stretch() {
     var windowWidth = window.innerWidth;
 
-    document.querySelectorAll(".row .gm_stretch-element-inside-column").forEach(function (element) {
-        var row = element.closest(".row");
-        var cols = element.closest('[class^="col-"]');
-        var colsHeight = cols.offsetHeight;
+    // Apply stretch logic only if the window width is greater than 1921px
+    if (windowWidth < 1921) {
+        document.querySelectorAll(".row .gm_stretch-element-inside-column").forEach(function (element) {
+            var row = element.closest(".row");
+            var cols = element.closest('[class^="col-"]');
+            var colsHeight = cols.offsetHeight;
 
-        var rect = element.getBoundingClientRect();
-        var rowRect = row.getBoundingClientRect();
-        var colsRect = cols.getBoundingClientRect();
+            var rect = element.getBoundingClientRect();
+            var rowRect = row.getBoundingClientRect();
+            var colsRect = cols.getBoundingClientRect();
 
-        var elementLeft = rect.left;
-        var elementRight = rect.right;
-        var rowLeft = rowRect.left + (parseFloat(getComputedStyle(row).paddingLeft) || 0);
-        var rowRight = windowWidth - rowRect.right + (parseFloat(getComputedStyle(row).paddingRight) || 0);
+            var elementLeft = rect.left;
+            var elementRight = rect.right;
+            var rowLeft = rowRect.left + (parseFloat(getComputedStyle(row).paddingLeft) || 0);
+            var rowRight = windowWidth - rowRect.right + (parseFloat(getComputedStyle(row).paddingRight) || 0);
 
-        var colsLeft = colsRect.left;
-        var colsRight = windowWidth - colsRect.right;
+            var colsLeft = colsRect.left;
+            var colsRight = windowWidth - colsRect.right;
 
-        var styles = {
-            "marginLeft": "0px",
-            "marginRight": "0px"
-        };
+            var styles = {
+                "marginLeft": "0px",
+                "marginRight": "0px"
+            };
 
-        if (Math.round(rowLeft) === Math.round(colsLeft)) {
-            var marginLeft = parseFloat(getComputedStyle(element).marginLeft) || 0;
-            styles.marginLeft = (marginLeft - elementLeft) + "px";
-        }
+            if (Math.round(rowLeft) === Math.round(colsLeft)) {
+                var marginLeft = parseFloat(getComputedStyle(element).marginLeft) || 0;
+                styles.marginLeft = (marginLeft - elementLeft) + "px";
+            }
 
-        if (Math.round(rowRight) === Math.round(colsRight)) {
-            var marginRight = parseFloat(getComputedStyle(element).marginRight) || 0;
-            styles.marginRight = (marginRight - (windowWidth - elementRight)) + "px";
-        }
+            if (Math.round(rowRight) === Math.round(colsRight)) {
+                var marginRight = parseFloat(getComputedStyle(element).marginRight) || 0;
+                styles.marginRight = (marginRight - (windowWidth - elementRight)) + "px";
+            }
 
-        Object.assign(element.style, styles);
-    });
+            Object.assign(element.style, styles);
+        });
+    } else {
+        // Reset styles when width is 1920px or below
+        document.querySelectorAll(".row .gm_stretch-element-inside-column").forEach(function (element) {
+            element.style.marginLeft = "";
+            element.style.marginRight = "-315px";
+        });
+    }
 }
 
+// Call the function on load
 gm_stretch();
 
+// Also call it on window resize to ensure responsiveness
+window.addEventListener('resize', gm_stretch);
 
-// Collection Slide 
+
+/*==================================
+* Collection Slide
+==================================*/
 var swiper = new Swiper(".gm_collections_slides", {
     slidesPerView: 4,
     spaceBetween: 30,
@@ -51,8 +68,27 @@ var swiper = new Swiper(".gm_collections_slides", {
     },
 });
 
-// Testimonial 
+/*==================================
+* Testimonial
+==================================*/
 var swiper = new Swiper('.gm_testimonial', {
+    loop: true,
+    autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+    },
+    navigation: {
+        nextEl: '.gm_testi-next',
+        prevEl: '.gm_testi-prev',
+    },
+    slidesPerView: 3,
+    spaceBetween: 30,
+});
+
+/*==================================
+* Testimonial Two
+==================================*/
+var swiper = new Swiper('.gm_testimonial-two', {
     loop: true,
     autoplay: {
         delay: 3000,
@@ -65,8 +101,24 @@ var swiper = new Swiper('.gm_testimonial', {
     slidesPerView: 2,
     spaceBetween: 30,
 });
-// Brand Carousel 
+
+/*==================================
+* Brand Carousel
+==================================*/
 var swiper = new Swiper('.gm_brand_slider ', {
+    loop: true,
+    slidesPerView: 5,
+    spaceBetween: 30,
+    autoplay: {
+        delay: 3100,
+        disableOnInteraction: false,
+    },
+});
+
+/*==================================
+* Brand Carousel Two
+==================================*/
+var swiper = new Swiper('.gm_brand_slider-two ', {
     loop: true,
     slidesPerView: 5,
     spaceBetween: 30,
@@ -76,12 +128,14 @@ var swiper = new Swiper('.gm_brand_slider ', {
     },
 });
 
-
-// Collection Product carousel
-var swiper = new Swiper('.gm_collection_slider ', {
+/*==================================
+* Collection Product carousel
+==================================*/
+var swiper = new Swiper('.gm_collection_slider', {
     loop: true,
-    slidesPerView: 3,
+    slidesPerView: 4,
     spaceBetween: 30,
+    initialSlide: 0,
     autoplay: {
         delay: 3000,
         disableOnInteraction: false,
@@ -92,7 +146,9 @@ var swiper = new Swiper('.gm_collection_slider ', {
     },
 });
 
-// Countdown Timer 
+/*==================================
+* Countdown Timer 
+==================================*/
 document.addEventListener("DOMContentLoaded", () => {
     const offerTimer = document.querySelector(".gm_offer_timer");
     const offerDate = new Date(offerTimer.getAttribute("data-offer-date")).getTime();
@@ -124,14 +180,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const intervalId = setInterval(updateCountdown, 1000);
-    updateCountdown(); // Call immediately to avoid 1-second delay
+    updateCountdown();
 });
 
-//10. Header Search Open
+/*==================================
+* Header Search Open
+==================================*/
 document.querySelector(".gm_headerSearch-open").addEventListener("click", function () {
     document.querySelector(".gm_search_form").classList.add("active");
 });
 
 document.querySelector(".gm_search_form .close").addEventListener("click", function () {
     document.querySelector(".gm_search_form").classList.remove("active");
+});
+
+/*==================================
+* Hero 03 Plus Toggle 
+==================================*/
+document.querySelectorAll('.gm_hero_right_content_03 i').forEach(function(icon) {
+    icon.addEventListener('click', function() {
+        // Hide other open items
+        document.querySelectorAll('.gm_hreoR_cnt_pdt.active').forEach(function(openContent) {
+            if (openContent !== icon.nextElementSibling) {
+                openContent.classList.remove('active');
+            }
+        });
+
+        // Toggle the clicked item
+        const content = this.nextElementSibling;
+        content.classList.toggle('active');
+    });
 });
