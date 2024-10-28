@@ -211,3 +211,20 @@ document.querySelectorAll('.gm_hero_right_content_03 i').forEach(function(icon) 
         content.classList.toggle('active');
     });
 });
+
+/*==================================
+* Category Hover Image
+==================================*/
+const categoryLinks = document.querySelectorAll('.gm_fitnessCat_wrap li a');
+
+categoryLinks.forEach(link => {
+    const images = link.parentElement.querySelectorAll('img'); // Get all <img> tags inside the <li>
+
+    link.addEventListener('mouseover', () => {
+        images.forEach(img => img.classList.add('hovered')); // Add 'hovered' to all images
+    });
+
+    link.addEventListener('mouseout', () => {
+        images.forEach(img => img.classList.remove('hovered')); // Remove 'hovered' from all images
+    });
+});
