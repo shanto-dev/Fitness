@@ -1,4 +1,88 @@
-// Hero section 03 
+/*========================/ Hero Section 01 /=========================== */
+.gm_hero_section {
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 50%;
+        height: 100%;
+        left: auto;
+        top: 0;
+        right: 0;
+        background: url(../images/hero/hero1-image-1.jpg)no-repeat 0 0 / cover;
+        z-index: -1;
+    }
+}
+
+
+.gm_hero_content {
+    position: relative;
+    padding: 132px 0 133px;
+    z-index: 2;
+
+    & h4 {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 31px;
+        text-align: left;
+        color: var(--color-yellow);
+        margin-bottom: 8px;
+        text-transform: uppercase;
+    }
+
+    & h2 {
+        font-size: 96px;
+        font-weight: 600;
+        line-height: 115px;
+        text-align: left;
+        color: var(--color-white);
+        margin-bottom: 32px;
+        text-transform: uppercase;
+    }
+
+    & p {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 30px;
+        text-align: left;
+        color: rgba(255, 255, 255, .7);
+        margin-bottom: 56px;
+    }
+
+    & .gm_primary-btn {
+        &::after {
+            background: var(--color-background);
+        }
+
+        &:hover {
+            color: var(--primary-color);
+
+            & svg {
+                fill: var(--primary-color);
+
+                & path {
+                    fill: var(--primary-color);
+                }
+            }
+        }
+    }
+}
+
+.gm_heroR_pdImg {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    border-radius: 50%;
+    border: 8px solid var(--primary-bg-color);
+    background: #FFC7A7;
+    @include displayFlex(flex, center, center, column);
+    margin-left: -102px;
+    z-index: 3;
+}
+
+/*========================/ Hero section 03 /=========================== */
 .gm_hero_section03 {
     min-height: 720px;
 }
@@ -25,21 +109,23 @@
 
 
 // Right content 
-.gm_heroRcol_03{
+.gm_heroRcol_03 {
     position: relative;
     padding-top: 200px;
 }
+
 .gm_hero_thumb_03 {
     z-index: 1;
     position: absolute;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
 
     & img {
         margin-top: -9px;
         margin-left: 5px;
     }
 }
+
 .gm_hero_right_content_03 {
     @include displayFlex(flex, center, start, column);
     gap: 11px;
@@ -58,13 +144,16 @@
         margin-left: 57px;
         cursor: pointer;
     }
-    &.gm_nthChild2{
+
+    &.gm_nthChild2 {
         margin-left: 338px;
     }
-    &.gm_nthChild3{
+
+    &.gm_nthChild3 {
         margin-left: 110px;
         margin-top: 65px;
-        & .gm_hreoR_cnt_pdt{
+
+        & .gm_hreoR_cnt_pdt {
             order: -1;
         }
     }
