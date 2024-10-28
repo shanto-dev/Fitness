@@ -25,20 +25,34 @@
 
     & .star-rating {
         position: relative;
-        display: inline-block;
+        @include displayFlex(inline-flex, start, center, row);
+        gap: 2px;
 
         & svg {
             fill: var(--secondary-color);
         }
 
-        & span {
+        & p {
             overflow: hidden;
-            float: left;
             top: 0;
             left: 0;
             position: absolute;
-            width: 90%;
+            width: 91.5%;
             height: 100%;
+
+            & .fillSvg {
+                min-width: 108px;
+                @include displayFlex(inline-flex, start, center, row);
+                top: 0;
+                left: 0;
+                position: absolute;
+                gap: 2px;
+                flex-wrap: nowrap;
+            }
+
+            & svg {
+                width: 20px;
+            }
         }
 
     }

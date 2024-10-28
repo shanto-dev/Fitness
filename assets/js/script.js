@@ -126,3 +126,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const intervalId = setInterval(updateCountdown, 1000);
     updateCountdown(); // Call immediately to avoid 1-second delay
 });
+
+//10. Header Search Open
+document.querySelector(".gm_headerSearch-open").addEventListener("click", function () {
+    document.querySelector(".gm_search_form").classList.add("active");
+});
+
+document.querySelector(".gm_search_form .close").addEventListener("click", function () {
+    document.querySelector(".gm_search_form").classList.remove("active");
+});
