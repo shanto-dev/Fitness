@@ -18,6 +18,11 @@
         font-size: 18px;
         font-weight: 500;
         line-height: 27px;
+
+        @include large-screen {
+            font-size: 16px;
+            line-height: 25px;
+        }
     }
 }
 
@@ -27,6 +32,11 @@
         font-weight: 500;
         line-height: 27px;
         color: var(--text-color);
+
+        @include large-screen {
+            font-size: 16px;
+            line-height: 25px;
+        }
 
         &:hover {
             color: var(--secondary-color);
@@ -49,6 +59,11 @@
         line-height: 27px;
         color: var(--text-color);
 
+        @include large-screen {
+            font-size: 16px;
+            line-height: 25px;
+        }
+
         &:hover {
             color: var(--secondary-color);
         }
@@ -69,20 +84,46 @@
 .mainWidget {
     margin-bottom: 136px;
 
+    @include large-screen {
+        margin-bottom: 100px;
+    }
+
+    & [class^="col-"]:nth-child(1) {
+        @include screen-992 {
+            width: 40%;
+        }
+    }
+
     & [class^="col-"]:nth-child(2) {
         width: 16%;
+
+        @include screen-992 {
+            width: 30%;
+        }
     }
 
     & [class^="col-"]:nth-child(3) {
         width: 14.3%;
+
+        @include screen-992 {
+            width: 30%;
+        }
     }
 
     & [class^="col-"]:nth-child(4) {
         width: 19%;
+
+        @include screen-992 {
+            width: 30%;
+        }
     }
 
     & [class^="col-"]:nth-child(5) {
         width: 25.7%;
+
+        @include screen-992 {
+            width: 40%;
+        }
     }
 }
 

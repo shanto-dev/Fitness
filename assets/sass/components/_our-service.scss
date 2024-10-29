@@ -8,10 +8,27 @@
             width: auto;
         }
 
+        & .img-one {
+            @include large-screen {
+                padding-right: 30px;
+            }
+
+            & img {
+                @include screen-992 {
+                    max-width: 80%;
+                    width: 100%;
+                }
+            }
+        }
+
         & .img-two {
             position: absolute;
             bottom: 60px;
             right: 42px;
+
+            @include large-screen {
+                right: 0;
+            }
         }
     }
 

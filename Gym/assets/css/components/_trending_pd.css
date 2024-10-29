@@ -1,0 +1,9 @@
+.gm_trendingItems {
+  position: relative; }
+
+.gm_trendingItem {
+  padding: 16px;
+  background: var(--color-background);
+  gap: 20px; }
+  .gm_trendingItem .gm_trendingItem__thumb {
+    width: 132px; }

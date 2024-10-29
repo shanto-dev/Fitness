@@ -24,6 +24,11 @@
                 font-size: 20px;
                 line-height: 27px;
             }
+
+            @include large-screen {
+                font-size: 18px;
+                line-height: 25px;
+            }
         }
 
         p {
@@ -36,6 +41,11 @@
             @include screen-1400 {
                 font-size: 16px;
                 line-height: 25px;
+            }
+
+            @include large-screen {
+                font-size: 15px;
+                line-height: 24px;
             }
         }
     }
@@ -106,10 +116,6 @@
     padding: 0;
     margin: 0;
 
-    @include screen-1400 {
-        padding: 26px;
-    }
-
     &__content {
         position: relative;
 
@@ -143,7 +149,7 @@
         width: 64px;
         height: 64px;
         @include displayFlex(inline-flex, center, center, column);
-        background-color: rgba(255, 88, 36,.1);
+        background-color: rgba(255, 88, 36, .1);
         margin-bottom: 24px;
 
         @include screen-1400 {
@@ -158,24 +164,31 @@
     .gm_iconbox02__content {
         text-align: left;
     }
+
     .gm_iconbox02__icon {
         text-align: left;
     }
 }
+
 .gm_iconbox02.gm_icon-center {
     text-align: center;
+
     .gm_iconbox02__content {
         text-align: center;
     }
+
     .gm_iconbox02__icon {
         text-align: center;
     }
 }
+
 .gm_iconbox02.gm_icon-right {
     text-align: right;
+
     .gm_iconbox02__content {
         text-align: right;
     }
+
     .gm_iconbox02__icon {
         text-align: right;
     }

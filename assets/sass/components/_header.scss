@@ -13,6 +13,40 @@
 
     & [class^="col-"]:nth-child(2) {
         width: calc(50% + 2.44%);
+
+        @include screen-1600 {
+            width: calc(50% + 1.03%);
+        }
+
+        @include screen-1400 {
+            width: calc(100% - (30.8% + 218px));
+        }
+
+        @include screen-1260 {
+            width: calc(100% - (32.8% + 218px));
+        }
+
+        @include large-screen {
+            width: calc(100% - (37.8% + 218px));
+        }
+    }
+
+    & [class^="col-"]:nth-child(3) {
+        @include screen-1400 {
+            width: 30.8%;
+        }
+
+        @include screen-1260 {
+            width: 32.8%;
+        }
+
+        @include large-screen {
+            width: 37.8%;
+        }
+    }
+
+    @include screen-1600 {
+        justify-content: space-between;
     }
 }
 
@@ -54,6 +88,11 @@
 .gm_topbar_info {
     padding: 13px 16px;
     gap: 64px;
+
+    @include screen-1400 {
+        padding: 13px 0;
+        gap: 54px;
+    }
 
     & .item-single {
         font-size: 16px;
@@ -97,11 +136,29 @@
         top: 3px;
         right: -34px;
         background: rgba(255, 255, 255, .3);
+
+        @include screen-1400 {
+            right: -29px;
+        }
+
+        @include screen-1260 {
+            display: none;
+        }
+    }
+}
+
+.gm_topbar_info .item-single:nth-child(2) {
+    @include screen-1260 {
+        display: none;
     }
 }
 
 .gm_topbar_info_right {
     gap: 64px;
+
+    @include screen-1400 {
+        gap: 54px;
+    }
 }
 
 .gm_topbar_suport {
@@ -115,6 +172,10 @@
         top: 3px;
         right: -34px;
         background: rgba(255, 255, 255, .3);
+
+        @include screen-1400 {
+            right: -29px;
+        }
     }
 
     & .item-single {
@@ -205,6 +266,24 @@
 
     & [class^="col-"]:nth-child(2) {
         width: calc(66.66666667% + 2.44%);
+
+        @include screen-1600 {
+            width: calc(63.666667% + 0%);
+        }
+
+        @include screen-1400 {
+            width: calc(100% - (20.625% + 219px));
+        }
+    }
+
+    & [class^="col-"]:nth-child(3) {
+        @include screen-1600 {
+            width: 20.625%;
+        }
+    }
+
+    @include screen-1600 {
+        justify-content: space-between;
     }
 }
 
@@ -214,6 +293,10 @@
     &>ul {
         @include displayFlex(flex, center, center, row);
         gap: 44px;
+
+        @include screen-1400 {
+            gap: 25px;
+        }
 
         &>li {
             &>a {
@@ -412,6 +495,10 @@
 // Header Right Side 
 .gm_header_right {
     gap: 52px;
+
+    @include large-screen {
+        gap: 35px;
+    }
 
     &>div {
         +div {
@@ -1128,4 +1215,3 @@
         }
     }
 }
-

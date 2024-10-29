@@ -60,12 +60,34 @@ window.addEventListener('resize', gm_stretch);
 * Collection Slide
 ==================================*/
 var swiper = new Swiper(".gm_collections_slides", {
-    slidesPerView: 4,
+    slidesPerView: 1,
     spaceBetween: 30,
     pagination: {
         el: ".gm_collection_pagi",
         type: "progressbar",
     },
+    breakpoints: {
+        480: {
+            slidesPerView: 2,
+            spaceBetween: 15
+        },
+        576: {
+            slidesPerView: 2,
+            spaceBetween: 30
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 18
+        },
+        992: {
+            slidesPerView: 3,
+            spaceBetween: 30
+        },
+        1280: {
+            slidesPerView: 4,
+            spaceBetween: 30
+        }
+    }
 });
 
 /*==================================
@@ -197,10 +219,10 @@ document.querySelector(".gm_search_form .close").addEventListener("click", funct
 /*==================================
 * Hero 03 Plus Toggle 
 ==================================*/
-document.querySelectorAll('.gm_hero_right_content_03 i').forEach(function(icon) {
-    icon.addEventListener('click', function() {
+document.querySelectorAll('.gm_hero_right_content_03 i').forEach(function (icon) {
+    icon.addEventListener('click', function () {
         // Hide other open items
-        document.querySelectorAll('.gm_hreoR_cnt_pdt.active').forEach(function(openContent) {
+        document.querySelectorAll('.gm_hreoR_cnt_pdt.active').forEach(function (openContent) {
             if (openContent !== icon.nextElementSibling) {
                 openContent.classList.remove('active');
             }

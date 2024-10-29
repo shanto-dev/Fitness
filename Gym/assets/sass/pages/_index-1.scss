@@ -1,0 +1,29 @@
+// Video Popup 
+.gm_video_popup_sec {
+    position: relative;
+}
+
+.gm_video_playBtnWrapp {
+    padding: 205px 0;
+}
+
+.gm_video_playBtn {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 52px;
+    text-align: left;
+    font-family: var(--heading-font);
+    color: var(--color-white);
+    @include displayFlex(flex, center, center, column);
+    width: 160px;
+    height: 160px;
+    text-transform: uppercase;
+    border: 2px solid var(--color-white);
+    border-radius: 50%;
+    margin: 0 auto;
+
+    &:hover {
+        border-color: var(--secondary-color);
+        color: var(--secondary-color);
+    }
+}

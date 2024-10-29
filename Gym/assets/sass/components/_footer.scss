@@ -1,0 +1,272 @@
+/*************** footer section start *****************/
+.widget {
+    position: relative;
+}
+
+.gm_widget_title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 31.2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+
+.gm_about_widget {
+    position: relative;
+
+    & p {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 27px;
+    }
+}
+
+.gm_widget_nav {
+    & li a {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 27px;
+        color: var(--text-color);
+
+        &:hover {
+            color: var(--secondary-color);
+        }
+
+    }
+
+    & li:not(:last-child) {
+        margin-bottom: 24px;
+    }
+}
+
+.gm_singleAddress {
+    position: relative;
+    margin-bottom: 24px;
+
+    & a {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 27px;
+        color: var(--text-color);
+
+        &:hover {
+            color: var(--secondary-color);
+        }
+    }
+
+    &.tel {
+        & a {
+            color: var(--primary-color);
+            font-weight: 600;
+
+            &:hover {
+                color: var(--secondary-color);
+            }
+        }
+    }
+}
+
+.mainWidget {
+    margin-bottom: 136px;
+
+    & [class^="col-"]:nth-child(2) {
+        width: 16%;
+    }
+
+    & [class^="col-"]:nth-child(3) {
+        width: 14.3%;
+    }
+
+    & [class^="col-"]:nth-child(4) {
+        width: 19%;
+    }
+
+    & [class^="col-"]:nth-child(5) {
+        width: 25.7%;
+    }
+}
+
+.gm_footerBtm_wrap {
+    position: relative;
+    @include displayFlex(flex, space-between, center, row);
+    background: var(--color-shade-background);
+    padding: 18px 24px 19px;
+
+    & .gm_footerPaymets {
+        & label {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            color: var(--color-heading);
+            text-transform: capitalize;
+        }
+
+        position: relative;
+        @include displayFlex(flex, space-between, center, row);
+        gap: 16px;
+
+        & .gm_fPayments {
+            @include displayFlex(flex, space-between, center, row);
+            gap: 16px;
+
+            & a {
+                position: relative;
+                display: inline-block;
+
+                &:hover {
+                    opacity: .8;
+                }
+            }
+        }
+    }
+}
+
+.gm_footer_social {
+    @include displayFlex(flex, start, center, row);
+    gap: 32px;
+
+    & label {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 25.2px;
+        letter-spacing: 0.05em;
+        color: var(--color-heading);
+    }
+
+    & ul {
+        @include displayFlex(flex, start, center, row);
+        gap: 24px;
+
+        li a {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 27px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            position: relative;
+
+            &:hover {
+                color: var(--secondary-color);
+            }
+
+            &:after {
+                position: absolute;
+                content: "";
+                width: 1px;
+                height: 13px;
+                right: -13px;
+                top: 5.5px;
+                background: rgba(3, 21, 32, .2)
+            }
+        }
+
+        li:last-child a {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.gm_coppyright {
+    padding: 16px;
+
+    & p {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        color: var(--text-color);
+        margin: 0;
+    }
+}
+
+
+/**************** footer style 2 ****************/
+.mainWidget_ft02 {
+    margin-bottom: 136px;
+
+    & [class^="col-"]:nth-child(1) {
+        width: 31.4%;
+    }
+
+    & [class^="col-"]:nth-child(2) {
+        width: 26.7%;
+    }
+
+    & [class^="col-"]:nth-child(4) {
+        width: 25.235%;
+    }
+
+
+}
+
+.gm_footerBtm_wrap02 {
+    padding: 19px 0;
+    border-top: 1px solid rgba(3, 21, 32, .1);
+}
+
+.gm_about_widget02 {
+    & .addressContent {
+        margin-bottom: 2px;
+
+    }
+
+    & .addressContent .gm_singleAddress:not(:last-child) {
+        margin-bottom: 16px;
+    }
+}
+
+.gm_subscribe_widget {
+    position: relative;
+
+    & .subsCribe-form {
+        & .emailIntpu {
+            width: calc(100% - 56px);
+
+            & svg {
+                fill: var(--text-color);
+                top: 21px;
+                left: 1px;
+
+                & path {
+                    stroke: var(--text-color);
+                    fill: var(--text-color);
+                    stroke-width: .05px;
+                }
+            }
+        }
+
+        & input[type="email"] {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 14px 0 13px 28px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 27px;
+            width: 100%;
+            color: var(--text-color);
+
+            &::placeholder {
+                color: var(--text-color);
+            }
+        }
+
+        & button[type="submit"] {
+            color: var(--color-white);
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 25px;
+            letter-spacing: 0.05em;
+            padding: 10px;
+            border: unset;
+            position: relative;
+            text-transform: uppercase;
+            min-width: 56px;
+
+            & span {
+                width: 56px;
+                height: 56px;
+            }
+        }
+    }
+}

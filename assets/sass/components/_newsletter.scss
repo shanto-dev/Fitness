@@ -15,6 +15,10 @@
             top: 25px;
             left: 25.65px;
         }
+
+        @include portrait-phone {
+            width: 100%;
+        }
     }
 
     & input[type="email"] {
@@ -29,6 +33,13 @@
 
     & input[type="email"]::placeholder {
         color: var(--color-placeholder);
+    }
+
+    & .form-group {
+        @include portrait-phone {
+            flex-direction: column;
+            gap: 8px;
+        }
     }
 
     .form-group label {
@@ -105,6 +116,10 @@
             padding: 4px;
             height: 24px;
             width: 24px;
+        }
+
+        @include portrait-phone {
+            max-width: 232px;
         }
     }
 }

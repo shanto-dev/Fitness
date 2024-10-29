@@ -1,3 +1,34 @@
+// About Style 
+.gm_about_section {
+    position: relative;
+    overflow: hidden;
+
+    &__body {
+        & p {
+            margin-bottom: 48px;
+            max-width: 520px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 27px;
+        }
+    }
+
+    & .gm_stretch_Img {
+        position: relative;
+
+        img {
+            max-width: 100%;
+            width: 100%;
+            object-fit: cover;
+            image-rendering: pixelated;
+
+            @include large-screen {
+                min-height: 460px;
+            }
+        }
+    }
+}
+
 // Video Popup 
 .gm_video_popup_sec {
     position: relative;

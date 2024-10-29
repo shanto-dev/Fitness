@@ -39,6 +39,12 @@
         transition: 0.3s all;
     }
 
+    & img {
+        max-width: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
     & .gm_collection_content {
         position: absolute;
         left: 0;
@@ -177,6 +183,7 @@
         margin-right: -135px;
     }
 }
+
 .gm_testimonial_stretch {
     overflow: hidden;
 }

@@ -1,3 +1,11 @@
+
+.nCollection01_Row{
+   & > .col-xl-6{
+        @include large-screen{
+            order: 1;
+        }
+    }
+}
 // Product 01 
 .gm_productItem01 {
     position: relative;

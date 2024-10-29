@@ -45,10 +45,14 @@
     background: var(--color-lookbook-bg);
     @include displayFlex(flex, start, start, row);
 
+    @include screen-768 {
+        flex-direction: column;
+    }
+
     &__img {
         flex: 0 0 auto;
         width: 280px;
-        background-image: url(../images/lookbook/lookbook-07-shape.png);
+        background-image: url(../images/lookbook/lookbook-01-shape.png);
         background-size: auto;
         background-position: bottom 23px right 96px;
         background-repeat: no-repeat;
@@ -65,11 +69,30 @@
             border-radius: 50%;
             background: #F4D6B2;
             z-index: -1;
+
+            @include screen-768 {}
+        }
+
+        & img {
+
+            @include screen-768 {
+                text-align: center;
+            }
+        }
+
+        @include screen-768 {
+            margin: 0 auto;
+            margin-left: 50%;
+            transform: translateX(-58%);
         }
     }
 
     &__content {
         padding: 49px 40px 50px 50px;
+
+        @include screen-768 {
+            padding: 49px 20px 50px;
+        }
 
         & h4 {
             font-size: 24px;
@@ -86,6 +109,11 @@
             line-height: 73px;
             text-transform: uppercase;
             margin-bottom: 10px;
+
+            @include screen-768 {
+                font-size: 42px;
+                line-height: 59px;
+            }
         }
 
         & .gm_primary-btn {
@@ -107,7 +135,7 @@
     font-weight: 500;
     line-height: 27px;
     color: var(--text-color);
-    display: inline-block;
+    display: block;
 }
 
 // Lookbook 02 
@@ -145,6 +173,11 @@
         background-repeat: no-repeat;
         background-size: auto;
         background-position: center;
+
+        & img {
+            max-width: 100%;
+            margin: 0 auto;
+        }
     }
 }
 

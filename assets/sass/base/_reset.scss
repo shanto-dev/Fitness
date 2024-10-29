@@ -4,6 +4,50 @@ body {
     background-color: var(--color-background);
 }
 
+@media(min-width: 768px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm {
+        max-width: 760px;
+    }
+}
+
+@media(min-width: 992px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm {
+        max-width: 980px;
+    }
+}
+
+@media(min-width: 1200px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1190px;
+    }
+}
+
+@media(min-width: 1320px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl,
+    .container-xxl {
+        max-width: 1314px;
+    }
+}
+
 @media(min-width: 1400px) {
 
     .container,
@@ -16,11 +60,16 @@ body {
     }
 }
 
+
 .container-large {
     max-width: 1600px;
     width: 100%;
     margin: 0 auto;
     padding: 0 42px;
+
+    @include screen-1600 {
+        padding: 0 15px;
+    }
 }
 
 input {
@@ -99,7 +148,7 @@ svg {
     }
 }
 
-.gmBgImage{
+.gmBgImage {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -153,8 +202,13 @@ svg {
         margin: 0;
 
         @include large-screen {
-            font-size: 48px;
-            line-height: 65px;
+            font-size: 46px;
+            line-height: 63px;
+        }
+
+        @include screen-992 {
+            font-size: 39px;
+            line-height: 56px;
         }
     }
 }

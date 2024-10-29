@@ -1,0 +1,93 @@
+.gm_followUs_instagram {
+    position: relative;
+    padding: 30px 15px;
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.gm_inst_smCol {
+    width: 29%;
+}
+
+.gm_instagram_banner {
+    padding: 40px;
+    background-color: var(--secondary-color);
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 40.098%;
+    @include displayFlex(flex, center, center, column);
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background-image: url(../images/shapes/instagrem-shape.png);
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: top 15px right 14px;
+        top: 0;
+        right: 0;
+    }
+
+    & h4 {
+        font-size: 40px;
+        line-height: 52px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--color-white);
+        margin: 0;
+    }
+
+    & h2 {
+        font-size: 96px;
+        line-height: 115px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--color-white);
+        margin: 0;
+    }
+}
+
+.gm_inst_social {
+    display: block;
+    position: relative;
+    z-index: 3;
+
+    &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(3, 21, 32, 0.7);
+        z-index: 0;
+        transition: 0.3s all;
+        transform: scale(0);   
+        border-radius: inherit;    
+    }
+
+    & i {
+        position: absolute;
+        font-size: 30px;
+        color: var(--secondary-color);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        opacity: 0;
+        transition: 0.3s all;
+    }
+    &:hover{
+        &::after{
+            transform: scale(1);
+        }
+        & i {
+            opacity: 1;
+        }
+    }
+}

@@ -48,6 +48,10 @@
 
 .mb-64 {
     margin-bottom: 64px !important;
+
+    @include large-screen {
+        margin-bottom: 40px !important;
+    }
 }
 
 .py-72 {
@@ -92,14 +96,27 @@
 .py-136 {
     padding-top: 136px;
     padding-bottom: 136px;
+
+    @include large-screen {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
 }
 
 .pt-136 {
     padding-top: 136px;
+
+    @include large-screen {
+        padding-top: 100px;
+    }
 }
 
 .pb-136 {
     padding-bottom: 136px;
+
+    @include large-screen {
+        padding-bottom: 100px;
+    }
 }
 
 
@@ -113,6 +130,7 @@
 .g-30,
 .gx-30 {
     --bs-gutter-x: 30px;
+
     @include large-screen {
         --bs-gutter-x: 24px;
     }
@@ -121,10 +139,12 @@
 .g-30,
 .gy-30 {
     --bs-gutter-y: 30px;
+
     @include large-screen {
         --bs-gutter-y: 24px;
     }
 }
+
 .gy-40 {
     --bs-gutter-y: 40px;
 }
