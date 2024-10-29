@@ -123,3 +123,19 @@
         }
     }
 }
+
+.mainWidget_ft02 .subsCribe-form {
+    & .form-group {
+
+        @include portrait-phone {
+            flex-direction: row;
+            gap: 0px;
+        }
+    }
+
+    button[type='submit'] {
+        @include portrait-phone {
+            max-width: 56px;
+        }
+    }
+}

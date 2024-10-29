@@ -25,6 +25,10 @@
         color: var(--color-white);
         text-transform: uppercase;
 
+        @include large-screen {
+            font-size: 16px;
+        }
+
         &:hover {
             background: var(--primary-color);
         }
@@ -189,7 +193,8 @@
             height: auto;
         }
     }
-    .gm_pd02Actions{
+
+    .gm_pd02Actions {
         position: absolute;
         opacity: 0;
         bottom: -30px;
@@ -276,8 +281,8 @@
         }
     }
 
-    &:hover{
-        & .gm_pd02Actions{
+    &:hover {
+        & .gm_pd02Actions {
             opacity: 1;
             bottom: 4px;
         }

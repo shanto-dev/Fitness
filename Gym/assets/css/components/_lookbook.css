@@ -1,9 +1,0 @@
-.gm_lookbook02 {
-  position: relative;
-  background: var(--primary-color); }
-  .gm_lookbook02__img {
-    position: relative;
-    background-image: url(/assets/images/lookbook/lookbook-02bg.png);
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: center; }

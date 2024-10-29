@@ -1,5 +1,12 @@
 .gm_collection_carousel {
     overflow: hidden;
+
+    @include screen-1320 {
+        & .gm_section_heading__title {
+            font-size: 50px;
+            line-height: 66px;
+        }
+    }
 }
 
 // Collection Slider 
@@ -186,4 +193,5 @@
 
 .gm_testimonial_stretch {
     overflow: hidden;
+    margin-left: 0 !important;
 }

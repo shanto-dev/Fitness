@@ -120,8 +120,29 @@ var swiper = new Swiper('.gm_testimonial-two', {
         nextEl: '.gm_testi-next',
         prevEl: '.gm_testi-prev',
     },
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 30,
+    breakpoints: {
+        480: {
+            spaceBetween: 15
+        },
+        576: {
+            spaceBetween: 15,
+            slidesPerView: 2
+        },
+        768: {
+            spaceBetween: 20,
+            slidesPerView: 2
+        },
+        992: {
+            spaceBetween: 20,
+            slidesPerView: 2
+        },
+        1280: {
+            spaceBetween: 30,
+            slidesPerView: 2
+        }
+    }
 });
 
 /*==================================
@@ -142,12 +163,34 @@ var swiper = new Swiper('.gm_brand_slider ', {
 ==================================*/
 var swiper = new Swiper('.gm_brand_slider-two ', {
     loop: true,
-    slidesPerView: 5,
-    spaceBetween: 30,
+    slidesPerView: 1,
+    spaceBetween: 15,
     autoplay: {
         delay: 3000,
         disableOnInteraction: false,
     },
+    breakpoints: {
+        480: {
+            slidesPerView: 2,
+            spaceBetween: 15
+        },
+        576: {
+            slidesPerView: 2,
+            spaceBetween: 20
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 20
+        },
+        992: {
+            slidesPerView: 4,
+            spaceBetween: 20
+        },
+        1280: {
+            slidesPerView: 5,
+            spaceBetween: 30
+        }
+    }
 });
 
 /*==================================
@@ -155,8 +198,8 @@ var swiper = new Swiper('.gm_brand_slider-two ', {
 ==================================*/
 var swiper = new Swiper('.gm_collection_slider', {
     loop: true,
-    slidesPerView: 4,
-    spaceBetween: 30,
+    slidesPerView: 1,
+    spaceBetween: 18,
     initialSlide: 0,
     autoplay: {
         delay: 3000,
@@ -166,6 +209,24 @@ var swiper = new Swiper('.gm_collection_slider', {
         nextEl: '.gm_collection-next',
         prevEl: '.gm_collection-prev',
     },
+    breakpoints: {
+        576: {
+            spaceBetween: 20,
+            slidesPerView: 3
+        },
+        768: {
+            spaceBetween: 20,
+            slidesPerView: 3
+        },
+        992: {
+            spaceBetween: 20,
+            slidesPerView: 4
+        },
+        1280: {
+            spaceBetween: 30,
+            slidesPerView: 4
+        }
+    }
 });
 
 /*==================================
@@ -248,5 +309,70 @@ categoryLinks.forEach(link => {
 
     link.addEventListener('mouseout', () => {
         images.forEach(img => img.classList.remove('hovered')); // Remove 'hovered' from all images
+    });
+});
+
+
+/*==================================
+* Sicky Headaer
+==================================*/
+window.addEventListener("scroll", function () {
+    const scrollBar = window.scrollY;
+    const header = document.querySelector(".header-sticky");
+
+    if (scrollBar > 150) {
+        header.classList.add("sticky-on");
+    } else {
+        header.classList.remove("sticky-on");
+    }
+});
+
+/*==================================
+* Mobile Menu
+==================================*/
+document.querySelector(".gm_menu_toggler").addEventListener("click", function () {
+    document.querySelector(".gm_mobile-menu").classList.add("active");
+});
+
+document.querySelector(".gm_mobile-menu .close").addEventListener("click", function () {
+    document.querySelector(".gm_mobile-menu").classList.remove("active");
+});
+
+document.querySelectorAll(".gm_mobile-menu ul li.has-submenu i").forEach(function (icon) {
+    icon.addEventListener("click", function () {
+        const submenu = this.nextElementSibling;
+        if (submenu) {
+            submenu.style.display = submenu.style.display === "none" ? "block" : "none";
+        }
+        this.classList.toggle("icon-rotate");
+    });
+});
+
+document.addEventListener("mouseup", function (e) {
+    const offCanvusMenu = document.querySelector(".gm_mobile-menu");
+    if (offCanvusMenu && !offCanvusMenu.contains(e.target) && e.target !== offCanvusMenu) {
+        offCanvusMenu.classList.remove("active");
+    }
+});
+
+/*==================================
+* Scroll to top Button
+==================================*/
+window.addEventListener("scroll", function () {
+    const scrollBar = window.scrollY;
+    const scrollTopBtn = document.querySelector(".scroll-top-btn");
+
+    if (scrollBar > 150) {
+        scrollTopBtn.style.display = "block"; // Equivalent to fadeIn()
+    } else {
+        scrollTopBtn.style.display = "none"; // Equivalent to fadeOut()
+    }
+});
+
+// Scroll to top on button click
+document.querySelector(".scroll-top-btn").addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Smooth scrolling effect
     });
 });

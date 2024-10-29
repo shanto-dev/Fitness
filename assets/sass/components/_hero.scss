@@ -85,10 +85,20 @@
 /*========================/ Hero section 03 /=========================== */
 .gm_hero_section03 {
     min-height: 720px;
+
+    @include screen-992 {
+        background-size: auto;
+        background-position: bottom right 14%;
+    }
 }
 
 .gm_hero_content_03 {
     position: relative;
+
+    @include screen-992 {
+        padding: 100px 0 60px;
+        max-width: 620px;
+    }
 
     & h2 {
         font-size: 96px;
@@ -96,6 +106,21 @@
         line-height: 115px;
         text-transform: uppercase;
         margin-bottom: 32px;
+
+        @include large-screen {
+            font-size: 70px;
+            line-height: 81px;
+        }
+
+        @include screen-992 {
+            font-size: 60px;
+            line-height: 71px;
+        }
+
+        @include portrait-phone {
+            font-size: 52px;
+            line-height: 63px;
+        }
     }
 
     & p {
@@ -123,6 +148,10 @@
     & img {
         margin-top: -9px;
         margin-left: 5px;
+
+        @include portrait-phone {
+            margin-left: -37px;
+        }
     }
 }
 
@@ -147,6 +176,18 @@
 
     &.gm_nthChild2 {
         margin-left: 338px;
+
+        @include large-screen {
+            margin-left: 220px;
+        }
+
+        @include screen-992 {
+            margin-left: 338px;
+        }
+
+        @include portrait-phone {
+            margin-left: 120px;
+        }
     }
 
     &.gm_nthChild3 {
@@ -155,6 +196,10 @@
 
         & .gm_hreoR_cnt_pdt {
             order: -1;
+        }
+
+        @include portrait-phone {
+            margin-left: 40px;
         }
     }
 }

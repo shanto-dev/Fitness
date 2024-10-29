@@ -166,6 +166,10 @@
     @include displayFlex(flex, start, center, row);
     gap: 32px;
 
+    @include large-screen {
+        gap: 24px;
+    }
+
     & label {
         font-size: 18px;
         font-weight: 700;
@@ -185,6 +189,11 @@
             color: var(--primary-color);
             text-transform: uppercase;
             position: relative;
+
+            @include large-screen {
+                font-size: 16px;
+                line-height: 27px;
+            }
 
             &:hover {
                 color: var(--secondary-color);
@@ -218,6 +227,10 @@
         line-height: 24px;
         color: var(--text-color);
         margin: 0;
+
+        @include screen-768 {
+            text-align: center;
+        }
     }
 }
 
@@ -226,16 +239,84 @@
 .mainWidget_ft02 {
     margin-bottom: 136px;
 
+    @include large-screen {
+        margin-bottom: 100px;
+    }
+
     & [class^="col-"]:nth-child(1) {
         width: 31.4%;
+
+        @include large-screen {
+            width: 32.4%;
+        }
+
+        @include screen-992 {
+            width: 44.4%;
+        }
+
+        @include screen-768 {
+            width: 60%;
+        }
+
+        @include portrait-phone {
+            width: 100%;
+        }
     }
 
     & [class^="col-"]:nth-child(2) {
         width: 26.7%;
+
+        @include large-screen {
+            width: 23.7%;
+        }
+
+        @include screen-992 {
+            width: 30.7%;
+        }
+
+        @include screen-768 {
+            width: 40%;
+        }
+
+        @include portrait-phone {
+            width: 100%;
+        }
+    }
+
+    & [class^="col-"]:nth-child(3) {
+        @include screen-992 {
+            width: 24.9%;
+        }
+
+        @include screen-768 {
+            width: 40%;
+        }
+
+        @include portrait-phone {
+            width: 100%;
+        }
+
     }
 
     & [class^="col-"]:nth-child(4) {
         width: 25.235%;
+
+        @include large-screen {
+            width: 27.235%;
+        }
+
+        @include screen-992 {
+            width: 44%;
+        }
+
+        @include screen-768 {
+            width: 60%;
+        }
+
+        @include portrait-phone {
+            width: 100%;
+        }
+
     }
 
 
@@ -244,6 +325,13 @@
 .gm_footerBtm_wrap02 {
     padding: 19px 0;
     border-top: 1px solid rgba(3, 21, 32, .1);
+
+    @include screen-992 {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        flex-direction: column-reverse;
+    }
 }
 
 .gm_about_widget02 {

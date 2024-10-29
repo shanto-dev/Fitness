@@ -92,6 +92,10 @@ ul {
     margin-bottom: 0;
 }
 
+.content-for-layout {
+    overflow-x: hidden;
+}
+
 button {
     border: 0;
     background-color: transparent;
@@ -111,6 +115,11 @@ svg {
 
 .logo {
     display: inline-block;
+    @include portrait-phone{
+        & img{
+            width: 100%;
+        }
+    }
 }
 
 // Background color Class 
@@ -387,6 +396,12 @@ svg {
             min-width: 75px;
             background: var(--color-background);
 
+            @include screen-768 {
+                font-size: 32px;
+                line-height: 44px;
+                min-width: 65px;
+            }
+
             & span {
                 display: inline-block;
                 font-size: 16px;
@@ -401,7 +416,7 @@ svg {
             background: transparent;
             padding: 0;
             min-width: unset;
-            padding: 13px;
+            padding: 6px;
             color: var(--color-white);
 
             & span {

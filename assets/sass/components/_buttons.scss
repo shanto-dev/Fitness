@@ -3,7 +3,7 @@
     width: 40px; 
     height: 40px;
     background-color: var(--primary-color);
-    color: var(--white-color);
+    color: var(--color-white);
     border-radius: 3px;
     position: fixed;
     bottom: 40px;
@@ -19,7 +19,7 @@
     padding: 0;
     &.primary-btn {
         background-color: var(--primary-color);
-        color: var(--white-color);
+        color: var(--color-white);
         position: relative; 
         z-index: 1;
         &::before, &::after {
@@ -146,8 +146,8 @@
         }
     }
     &.outline-btn-white {
-        border: 1px solid var(--white-color);
-        color: var(--white-color);
+        border: 1px solid var(--color-white);
+        color: var(--color-white);
         background-color: transparent;
         position: relative;
         &::before, &::after  {
@@ -208,7 +208,7 @@
     }
     &.secondary-btn {
         background-color: var(--secondary-color);
-        color: var(--white-color);
+        color: var(--color-white);
         position: relative; 
         z-index: 1;
         &::before, &::after {
@@ -277,8 +277,8 @@
     width: 120px;
     height: 120px;
     background-color: transparent;
-    color: var(--white-color); 
-    border: 1px solid var(--white-color);
+    color: var(--color-white); 
+    border: 1px solid var(--color-white);
     border-radius: 50%;
     display: inline-flex;
     align-items: center;

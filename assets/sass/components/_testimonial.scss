@@ -1,8 +1,9 @@
-.gm_testimonial_cnt{
+.gm_testimonial_cnt {
     background: var(--color-shade-background);
     padding: 40px;
 }
-.gm_testi_author{
+
+.gm_testi_author {
     margin: 6px 40 0;
 }
 
@@ -26,6 +27,11 @@
         font-weight: 500;
         line-height: 30px;
         margin-bottom: 24px;
+
+        @include large-screen {
+            font-size: 18px;
+            line-height: 27px;
+        }
     }
 }
 

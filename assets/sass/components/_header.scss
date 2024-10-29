@@ -1,5 +1,20 @@
 /************** header component ****************/
 // Header Topbar 
+.header-sticky.sticky-on {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    -webkit-animation: 0.3s theme_fadeInDown;
+    animation: 0.3s theme_fadeInDown;
+}
+
+.header-sticky.sticky-on .gm_topbar,
+.header-sticky.sticky-on .gm_topbar03 {
+    display: none !important;
+}
+
 .gm_topbar {
     position: relative;
     background-color: var(--color-dark-light);
@@ -691,19 +706,21 @@
     }
 }
 
-.header-toggle {
-    button {
-        span {
-            background-color: var(--color-white);
-        }
-    }
-}
-
 
 
 /*************** header style 3 *****************/
 .gm_header_section03 {
     position: relative;
+
+    .container {
+        @include large-screen {
+            max-width: 100% !important;
+        }
+    }
+}
+
+.gm_header_section03.sticky-on {
+    background: var(--color-shade-background);
 }
 
 .gm_topbar03 {
@@ -725,6 +742,14 @@
         text-align: center;
         @include displayFlex(flex, center, center, row);
         gap: 12px;
+
+        @include screen-1320 {
+            padding: 0 75px;
+        }
+
+        @include large-screen {
+            padding: 0 48px;
+        }
 
         &:before {
             position: absolute;
@@ -975,6 +1000,10 @@
 .gm_header_right03 {
     gap: 15px;
 
+    @include portrait-phone {
+        gap: 20px;
+    }
+
     &>div {
         +div {
             position: relative;
@@ -1054,6 +1083,10 @@
 .gm_user_links03 {
     padding: 35.5px 0;
     padding-right: 17px;
+
+    @include portrait-phone {
+        padding: 26.5px 0;
+    }
 
     button {
         color: var(--color-white);
@@ -1136,6 +1169,10 @@
     padding: 35.5px 0;
     padding-right: 17px;
 
+    @include portrait-phone {
+        padding: 26.5px 0;
+    }
+
     & a {
         display: inline-block;
         position: relative;
@@ -1172,6 +1209,10 @@
     position: relative;
     padding: 35.5px 0;
     padding-right: 17px;
+
+    @include portrait-phone {
+        padding: 26.5px 0;
+    }
 
     .cart-btn {
         color: var(--color-white);
@@ -1212,6 +1253,64 @@
             opacity: 1;
             visibility: visible;
             top: 100%;
+        }
+    }
+}
+
+
+.gm_menu_toggler {
+    width: 40px;
+    display: inline-block;
+
+    span {
+        width: 100%;
+        height: 2px;
+        background-color: var(--primary-color);
+        display: block;
+        transition: var(--transition-base);
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            z-index: -1;
+            background-color: var(--secondary-color);
+            transition: var(--transition-base);
+        }
+
+        +span {
+            margin-top: 6px;
+        }
+
+        &:nth-child(1),
+        &:nth-child(3) {
+            &::before {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+
+    &:hover {
+        span {
+            &::before {
+                right: 0;
+                left: auto;
+                width: 100%;
+            }
+
+            &:nth-child(1),
+            &:nth-child(3) {
+                &::before {
+                    left: 0;
+                    right: auto;
+                }
+            }
         }
     }
 }

@@ -165,6 +165,10 @@
     background: var(--color-shade-background);
     transition: 0.3s all;
 
+    @include large-screen {
+        padding: 35px 20px;
+    }
+
     &>img {
         position: absolute;
         width: 100%;
@@ -186,6 +190,11 @@
             color: var(--text-color);
             @include displayFlex(inline-flex, start, center, row);
             gap: 6px;
+
+            @include large-screen {
+                font-size: 16px;
+                line-height: 25px;
+            }
 
             & i {
                 font-size: 15px;
@@ -227,6 +236,16 @@
             text-transform: uppercase;
             margin-bottom: 24px;
 
+            @include screen-1320 {
+                font-size: 34px;
+                line-height: 46px;
+            }
+
+            @include large-screen {
+                font-size: 30px;
+                line-height: 42px;
+            }
+
             & a {
                 color: inherit;
                 font-family: inherit;
@@ -255,6 +274,11 @@
         border: 1px solid var(--color-border2);
         color: var(--secondary-color);
         gap: 8px;
+
+        @include large-screen {
+            padding: 13px 20px 12px;
+            font-size: 16px;
+        }
 
         & i {
             font-size: 16px;

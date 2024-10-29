@@ -196,6 +196,10 @@
         position: relative;
         padding: 40px;
 
+        @include large-screen {
+            padding: 40px 15px;
+        }
+
         & h4 {
             font-family: var(--body-font);
             font-size: 18px;
@@ -205,6 +209,11 @@
             color: var(--secondary-color);
             text-transform: uppercase;
             margin-bottom: 4px;
+
+            @include portrait-phone {
+                font-size: 12px;
+                line-height: 19.2px;
+            }
         }
 
         & h2 {
@@ -214,6 +223,16 @@
             color: var(--color-white);
             text-transform: uppercase;
             margin-bottom: 31px;
+
+            @include screen-1320 {
+                font-size: 35px;
+                line-height: 47px;
+            }
+
+            @include portrait-phone {
+                font-size: 24px;
+                line-height: 33px;
+            }
         }
     }
 
@@ -235,6 +254,17 @@
         gap: 8px;
         background: var(--color-background);
         color: var(--secondary-color);
+
+        @include large-screen {
+            padding: 14px 20px 13px;
+            font-size: 16px;
+        }
+
+        @include portrait-phone {
+            padding: 10px 12px 9px;
+            font-size: 13px;
+
+        }
 
         i {
             padding: 1px .6px;
@@ -265,6 +295,10 @@
         position: relative;
         padding: 40px;
 
+        @include large-screen {
+            padding: 40px 15px;
+        }
+
         & h4 {
             font-family: var(--body-font);
             font-size: 18px;
@@ -274,6 +308,11 @@
             color: var(--secondary-color);
             text-transform: uppercase;
             margin-bottom: 4px;
+
+            @include portrait-phone {
+                font-size: 12px;
+                line-height: 19.2px;
+            }
         }
 
         & h2 {
@@ -283,6 +322,21 @@
             color: var(--color-heading);
             text-transform: uppercase;
             margin-bottom: 31px;
+
+            @include screen-1320 {
+                font-size: 35px;
+                line-height: 47px;
+            }
+
+            @include large-screen {
+                font-size: 32px;
+                line-height: 44px;
+            }
+
+            @include portrait-phone {
+                font-size: 24px;
+                line-height: 33px;
+            }
         }
     }
 
@@ -303,6 +357,16 @@
     & .gm_primary-btn {
         padding: 16px 20px 15px;
         gap: 8px;
+
+        @include large-screen {
+            padding: 14px 20px 13px;
+            font-size: 16px;
+        }
+
+        @include portrait-phone {
+            padding: 10px 12px 9px;
+            font-size: 13px;
+        }
 
         i {
             padding: 1px .6px;
@@ -332,6 +396,16 @@
             color: var(--color-white);
             text-transform: uppercase;
             margin-bottom: 8px;
+
+            @include screen-1320 {
+                font-size: 35px;
+                line-height: 47px;
+            }
+
+            @include large-screen {
+                font-size: 32px;
+                line-height: 44px;
+            }
         }
     }
 
@@ -383,6 +457,14 @@
     background-position: top left;
     background-repeat: no-repeat;
 
+    @include screen-1320 {
+        background-position: top -18px left -11px;
+    }
+
+    @include large-screen {
+        background-position: top -52px left -21px;
+    }
+
     &>* {
         width: 100%;
         flex: 0 0 auto;
@@ -391,6 +473,10 @@
     &__content {
         position: relative;
         padding: 24px;
+
+        @include large-screen {
+            padding: 24px 15px;
+        }
 
         & h2 {
             font-size: 40px;
@@ -402,11 +488,25 @@
             @include displayFlex(flex, center, center, row);
             column-gap: 16px;
             margin: 0;
+
+            @include screen-1320 {
+                font-size: 35px;
+                line-height: 47px;
+            }
+
+            @include large-screen {
+                font-size: 27px;
+                line-height: 44px;
+            }
         }
     }
 
     &__img {
         @include displayFlex(flex, end, top, row);
+
+        @include screen-1320 {
+            padding-left: 15.1%;
+        }
 
         & img {
             max-width: 100%;
@@ -457,6 +557,16 @@
             color: var(--color-white);
             text-transform: uppercase;
             margin-bottom: 8px;
+
+            @include screen-1320 {
+                font-size: 35px;
+                line-height: 47px;
+            }
+
+            @include large-screen {
+                font-size: 27px;
+                line-height: 44px;
+            }
         }
     }
 
