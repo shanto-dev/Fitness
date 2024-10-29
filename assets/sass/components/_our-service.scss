@@ -18,6 +18,10 @@
                     max-width: 80%;
                     width: 100%;
                 }
+
+                @include portrait-phone {
+                    max-width: 90%;
+                }
             }
         }
 

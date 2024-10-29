@@ -271,12 +271,20 @@
             background: rgba(255, 255, 255, .1);
             z-index: -1;
         }
+
+        @include portrait-phone {
+            padding: 21px 19px 21px 0;
+        }
     }
 }
 
 .gm_mainFRow {
     & [class^="col-"]:nth-child(1) {
         width: 219px;
+
+        @include portrait-phone {
+            width: 195px;
+        }
     }
 
     & [class^="col-"]:nth-child(2) {
@@ -515,6 +523,10 @@
         gap: 35px;
     }
 
+    @include portrait-phone {
+        gap: 12px;
+    }
+
     &>div {
         +div {
             position: relative;
@@ -559,6 +571,10 @@
 // user 
 .gm_user_links {
     padding: 23.5px 0;
+
+    @include portrait-phone {
+        padding: 16.5px 0;
+    }
 
     button {
         color: var(--color-white);
@@ -632,6 +648,10 @@
     position: relative;
     padding: 23.5px 0;
 
+    @include portrait-phone {
+        padding: 16.5px 0;
+    }
+
     & a {
         display: inline-block;
         position: relative;
@@ -660,6 +680,11 @@
     position: relative;
     padding: 23.5px 0;
     padding-right: 12px;
+
+    @include portrait-phone {
+        padding: 16.5px 0;
+        padding-right: 12px;
+    }
 
     .cart-btn {
         color: var(--color-white);
@@ -703,6 +728,15 @@
 
     &:hover {
         color: var(--secondary-color);
+    }
+}
+
+.gmhd_toggle.gm_menu_toggler {
+    top: 3px;
+    position: relative;
+
+    & span {
+        background: var(--color-background);
     }
 }
 

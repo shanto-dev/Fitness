@@ -1,3 +1,71 @@
+
+/*==================================
+* Sicky Headaer
+==================================*/
+window.addEventListener("scroll", function () {
+    const scrollBar = window.scrollY;
+    const headers = document.querySelectorAll(".header-sticky");
+
+    headers.forEach(header => {
+        if (scrollBar > 150) {
+            header.classList.add("sticky-on");
+        } else {
+            header.classList.remove("sticky-on");
+        }
+    });
+});
+
+
+/*==================================
+* Mobile Menu
+==================================*/
+document.querySelector(".gm_menu_toggler").addEventListener("click", function () {
+    document.querySelector(".gm_mobile-menu").classList.add("active");
+});
+
+document.querySelector(".gm_mobile-menu .close").addEventListener("click", function () {
+    document.querySelector(".gm_mobile-menu").classList.remove("active");
+});
+
+document.querySelectorAll(".gm_mobile-menu ul li.has-submenu i").forEach(function (icon) {
+    icon.addEventListener("click", function () {
+        const submenu = this.nextElementSibling;
+        if (submenu) {
+            submenu.style.display = submenu.style.display === "none" ? "block" : "none";
+        }
+        this.classList.toggle("icon-rotate");
+    });
+});
+
+document.addEventListener("mouseup", function (e) {
+    const offCanvusMenu = document.querySelector(".gm_mobile-menu");
+    if (offCanvusMenu && !offCanvusMenu.contains(e.target) && e.target !== offCanvusMenu) {
+        offCanvusMenu.classList.remove("active");
+    }
+});
+
+/*==================================
+* Scroll to top Button
+==================================*/
+window.addEventListener("scroll", function () {
+    const scrollBar = window.scrollY;
+    const scrollTopBtn = document.querySelector(".scroll-top-btn");
+
+    if (scrollBar > 150) {
+        scrollTopBtn.style.display = "block"; // Equivalent to fadeIn()
+    } else {
+        scrollTopBtn.style.display = "none"; // Equivalent to fadeOut()
+    }
+});
+
+// Scroll to top on button click
+document.querySelector(".scroll-top-btn").addEventListener("click", function () {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Smooth scrolling effect
+    });
+});
+
 /*==================================
 * Strech Image 
 ==================================*/
@@ -234,48 +302,59 @@ var swiper = new Swiper('.gm_collection_slider', {
 ==================================*/
 document.addEventListener("DOMContentLoaded", () => {
     const offerTimer = document.querySelector(".gm_offer_timer");
-    const offerDate = new Date(offerTimer.getAttribute("data-offer-date")).getTime();
 
-    function updateCountdown() {
-        const now = new Date().getTime();
-        const timeLeft = offerDate - now;
+    if (offerTimer) { 
+        const offerDate = new Date(offerTimer.getAttribute("data-offer-date")).getTime();
 
-        if (timeLeft > 0) {
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = offerDate - now;
 
-            offerTimer.innerHTML = `<ul>
-            <li>${days}<span>Days</span> </li>
-            <li class="gm_timerSeparator"><span>:</span></li>
-            <li>${String(hours).padStart(2, '0')}<span>Hrs</span> </li>
-            <li class="gm_timerSeparator"><span>:</span></li>
-            <li>${String(minutes).padStart(2, '0')}<span>Mins</span> </li>
-            <li class="gm_timerSeparator"><span>:</span></li>
-            <li>${String(seconds).padStart(2, '0')}<span>Secs</span></li>
-            </ul>
-            `;
-        } else {
-            offerTimer.innerHTML = "Offer Expired!";
-            clearInterval(intervalId);
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                offerTimer.innerHTML = `<ul>
+                    <li>${days}<span>Days</span> </li>
+                    <li class="gm_timerSeparator"><span>:</span></li>
+                    <li>${String(hours).padStart(2, '0')}<span>Hrs</span> </li>
+                    <li class="gm_timerSeparator"><span>:</span></li>
+                    <li>${String(minutes).padStart(2, '0')}<span>Mins</span> </li>
+                    <li class="gm_timerSeparator"><span>:</span></li>
+                    <li>${String(seconds).padStart(2, '0')}<span>Secs</span></li>
+                </ul>`;
+            } else {
+                offerTimer.innerHTML = "Offer Expired!";
+                clearInterval(intervalId);
+            }
         }
-    }
 
-    const intervalId = setInterval(updateCountdown, 1000);
-    updateCountdown();
+        const intervalId = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    }
 });
 
 /*==================================
 * Header Search Open
 ==================================*/
-document.querySelector(".gm_headerSearch-open").addEventListener("click", function () {
-    document.querySelector(".gm_search_form").classList.add("active");
+document.addEventListener("DOMContentLoaded", function () {
+    const searchOpen = document.querySelector(".gm_headerSearch-open");
+    const searchForm = document.querySelector(".gm_search_form");
+    const searchClose = document.querySelector(".gm_search_form .close");
+
+    if (searchOpen && searchForm && searchClose) {
+        searchOpen.addEventListener("click", function () {
+            searchForm.classList.add("active");
+        });
+
+        searchClose.addEventListener("click", function () {
+            searchForm.classList.remove("active");
+        });
+    }
 });
 
-document.querySelector(".gm_search_form .close").addEventListener("click", function () {
-    document.querySelector(".gm_search_form").classList.remove("active");
-});
 
 /*==================================
 * Hero 03 Plus Toggle 
@@ -313,66 +392,3 @@ categoryLinks.forEach(link => {
 });
 
 
-/*==================================
-* Sicky Headaer
-==================================*/
-window.addEventListener("scroll", function () {
-    const scrollBar = window.scrollY;
-    const header = document.querySelector(".header-sticky");
-
-    if (scrollBar > 150) {
-        header.classList.add("sticky-on");
-    } else {
-        header.classList.remove("sticky-on");
-    }
-});
-
-/*==================================
-* Mobile Menu
-==================================*/
-document.querySelector(".gm_menu_toggler").addEventListener("click", function () {
-    document.querySelector(".gm_mobile-menu").classList.add("active");
-});
-
-document.querySelector(".gm_mobile-menu .close").addEventListener("click", function () {
-    document.querySelector(".gm_mobile-menu").classList.remove("active");
-});
-
-document.querySelectorAll(".gm_mobile-menu ul li.has-submenu i").forEach(function (icon) {
-    icon.addEventListener("click", function () {
-        const submenu = this.nextElementSibling;
-        if (submenu) {
-            submenu.style.display = submenu.style.display === "none" ? "block" : "none";
-        }
-        this.classList.toggle("icon-rotate");
-    });
-});
-
-document.addEventListener("mouseup", function (e) {
-    const offCanvusMenu = document.querySelector(".gm_mobile-menu");
-    if (offCanvusMenu && !offCanvusMenu.contains(e.target) && e.target !== offCanvusMenu) {
-        offCanvusMenu.classList.remove("active");
-    }
-});
-
-/*==================================
-* Scroll to top Button
-==================================*/
-window.addEventListener("scroll", function () {
-    const scrollBar = window.scrollY;
-    const scrollTopBtn = document.querySelector(".scroll-top-btn");
-
-    if (scrollBar > 150) {
-        scrollTopBtn.style.display = "block"; // Equivalent to fadeIn()
-    } else {
-        scrollTopBtn.style.display = "none"; // Equivalent to fadeOut()
-    }
-});
-
-// Scroll to top on button click
-document.querySelector(".scroll-top-btn").addEventListener("click", function () {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth" // Smooth scrolling effect
-    });
-});

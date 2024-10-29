@@ -164,6 +164,11 @@
             text-transform: uppercase;
             color: var(--color-white);
             margin-bottom: 24px;
+
+            @include portrait-phone {
+                font-size: 34px;
+                line-height: 40px;
+            }
         }
     }
 
