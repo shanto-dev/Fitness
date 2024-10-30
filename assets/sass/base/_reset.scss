@@ -106,10 +106,10 @@ ins {
 }
 
 svg {
-    transform: 0.3s all;
+    transition: var(--transition-base);
 
     & path {
-        transform: 0.3s all;
+        transition: var(--transition-base);
     }
 }
 

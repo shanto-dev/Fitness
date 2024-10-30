@@ -137,13 +137,13 @@ ins {
   text-decoration: none; }
 
 svg {
-  -webkit-transform: 0.3s all;
-  -ms-transform: 0.3s all;
-  transform: 0.3s all; }
+  -webkit-transition: var(--transition-base);
+  -o-transition: var(--transition-base);
+  transition: var(--transition-base); }
   svg path {
-    -webkit-transform: 0.3s all;
-    -ms-transform: 0.3s all;
-    transform: 0.3s all; }
+    -webkit-transition: var(--transition-base);
+    -o-transition: var(--transition-base);
+    transition: var(--transition-base); }
 
 .logo {
   display: inline-block; }
@@ -3854,6 +3854,261 @@ p {
   .gm_trendingItem_two:hover .gm_pd02Actions {
     opacity: 1;
     bottom: 4px; }
+
+.gm_trendingItem_03 {
+  position: relative; }
+  .gm_trendingItem_03__thumb {
+    max-width: 100%;
+    min-height: 340px;
+    background: var(--color-background);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden; }
+    .gm_trendingItem_03__thumb img {
+      max-width: 264px;
+      width: auto;
+      -o-object-fit: cover;
+      object-fit: cover;
+      max-height: 264px;
+      height: auto; }
+  .gm_trendingItem_03__centent {
+    padding: 16px 0 0; }
+    .gm_trendingItem_03__centent h2 {
+      font-family: var(--body-font);
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 28px;
+      text-align: left;
+      margin-bottom: 6px;
+      padding-right: 45px; }
+      .gm_trendingItem_03__centent h2 a {
+        color: inherit;
+        font-family: inherit; }
+        .gm_trendingItem_03__centent h2 a:hover {
+          color: var(--secondary-color); }
+  .gm_trendingItem_03__price {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+    .gm_trendingItem_03__price .gm_pi03Price {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 27px;
+      text-align: left;
+      color: var(--color-heading);
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row; }
+      .gm_trendingItem_03__price .gm_pi03Price ins {
+        margin-right: 8px;
+        text-decoration: none; }
+      .gm_trendingItem_03__price .gm_pi03Price del {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: left;
+        color: var(--text-color); }
+    .gm_trendingItem_03__price .gm_trending_cart {
+      width: 40px;
+      height: 40px;
+      background: var(--color-background);
+      -webkit-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin-top: -12px; }
+      .gm_trendingItem_03__price .gm_trending_cart:hover {
+        background: var(--secondary-color); }
+        .gm_trendingItem_03__price .gm_trending_cart:hover i {
+          color: var(--color-white); }
+        .gm_trendingItem_03__price .gm_trending_cart:hover svg {
+          fill: var(--color-white); }
+          .gm_trendingItem_03__price .gm_trending_cart:hover svg path {
+            fill: var(--color-white); }
+  .gm_trendingItem_03__meta a {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    color: var(--secondary-color);
+    display: inline-block; }
+    .gm_trendingItem_03__meta a:hover {
+      color: var(--color-heading); }
+  .gm_trendingItem_03__review {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 2px; }
+  .gm_trendingItem_03 .star-rating {
+    position: relative;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    gap: 1px; }
+    .gm_trendingItem_03 .star-rating svg {
+      fill: var(--color-yellow);
+      width: 19px;
+      height: 18px; }
+    .gm_trendingItem_03 .star-rating p {
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 91%;
+      height: 100%; }
+      .gm_trendingItem_03 .star-rating p .fillSvg {
+        min-width: 108px;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: start;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        top: 0;
+        left: 0;
+        position: absolute;
+        gap: 1px;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        fill: var(--color-yellow); }
+      .gm_trendingItem_03 .star-rating p svg {
+        width: 20px;
+        fill: var(--color-yellow);
+        width: 19px;
+        height: 18px; }
+        .gm_trendingItem_03 .star-rating p svg path {
+          fill: var(--color-yellow); }
+
+.gm_pd03Actions {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 8px;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all; }
+  .gm_pd03Actions a {
+    width: 40px;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background: var(--primary-color);
+    opacity: 0;
+    visibility: hidden; }
+    .gm_pd03Actions a i {
+      font-size: 17px;
+      color: var(--color-white); }
+    .gm_pd03Actions a svg {
+      fill: var(--color-white); }
+      .gm_pd03Actions a svg path {
+        fill: var(--color-white);
+        stroke-width: 0.2px;
+        stroke: var(--color-white); }
+    .gm_pd03Actions a:hover {
+      background: var(--secondary-color); }
+
+.gm_trendingItem_03:hover .gm_pd03Actions {
+  top: 10px; }
+  .gm_trendingItem_03:hover .gm_pd03Actions a {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); }
 
 .gm_trendingItem_offer {
   padding: 15px 16px;

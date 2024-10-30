@@ -289,6 +289,216 @@
     }
 }
 
+// Items 03
+.gm_trendingItem_03 {
+    position: relative;
+
+    &__thumb {
+        max-width: 100%;
+        min-height: 340px;
+        background: var(--color-background);
+        @include displayFlex(flex, center, center, column);
+        position: relative;
+        overflow: hidden;
+
+        & img {
+            max-width: 264px;
+            width: auto;
+            object-fit: cover;
+            max-height: 264px;
+            height: auto;
+        }
+    }
+
+    &__centent {
+        padding: 16px 0 0;
+
+        & h2 {
+            font-family: var(--body-font);
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 28px;
+            text-align: left;
+            margin-bottom: 6px;
+            padding-right: 45px;
+
+            & a {
+                color: inherit;
+                font-family: inherit;
+
+                &:hover {
+                    color: var(--secondary-color);
+                }
+            }
+
+        }
+    }
+
+    &__price {
+        @include displayFlex(flex, space-between, center, row);
+
+        & .gm_pi03Price {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 27px;
+            text-align: left;
+            color: var(--color-heading);
+            @include displayFlex(inline-flex, space-between, center, row);
+
+            & ins {
+                margin-right: 8px;
+                text-decoration: none;
+            }
+
+            & del {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 24px;
+                text-align: left;
+                color: var(--text-color);
+            }
+        }
+
+        & .gm_trending_cart {
+            width: 40px;
+            height: 40px;
+            background: var(--color-background);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+            @include displayFlex(flex, center, center, column);
+            margin-top: -12px;
+
+            &:hover {
+                background: var(--secondary-color);
+
+                & i {
+                    color: var(--color-white);
+                }
+
+                & svg {
+                    fill: var(--color-white);
+
+                    & path {
+                        fill: var(--color-white);
+                    }
+                }
+            }
+        }
+    }
+
+    &__meta {
+        & a {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            text-align: left;
+            color: var(--secondary-color);
+            display: inline-block;
+
+            &:hover {
+                color: var(--color-heading);
+            }
+        }
+    }
+
+    &__review {
+        @include displayFlex(flex, space-between, center, row);
+        gap: 20px;
+        margin-bottom: 2px;
+    }
+
+    & .star-rating {
+        position: relative;
+        @include displayFlex(inline-flex, start, center, row);
+        gap: 1px;
+
+        & svg {
+            fill: var(--color-yellow);
+            width: 19px;
+            height: 18px;
+        }
+
+        & p {
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 91%;
+            height: 100%;
+
+            & .fillSvg {
+                min-width: 108px;
+                @include displayFlex(inline-flex, start, center, row);
+                top: 0;
+                left: 0;
+                position: absolute;
+                gap: 1px;
+                flex-wrap: nowrap;
+                fill: var(--color-yellow);
+            }
+
+            & svg {
+                width: 20px;
+                fill: var(--color-yellow);
+                width: 19px;
+                height: 18px;
+
+                & path {
+                    fill: var(--color-yellow);
+                }
+            }
+        }
+
+    }
+}
+
+.gm_pd03Actions {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    @include displayFlex(inline-flex, start, center, column);
+    gap: 8px;
+    transition: 0.3s all;
+
+    & a {
+        width: 40px;
+        height: 40px;
+        @include displayFlex(flex, center, center, column);
+        background: var(--primary-color);
+        opacity: 0;
+        visibility: hidden;
+
+        & i {
+            font-size: 17px;
+            color: var(--color-white);
+        }
+
+        & svg {
+            fill: var(--color-white);
+
+            & path {
+                fill: var(--color-white);
+                stroke-width: 0.2px;
+                stroke: var(--color-white);
+            }
+        }
+
+        &:hover {
+            background: var(--secondary-color);
+        }
+    }
+}
+
+.gm_trendingItem_03:hover {
+    & .gm_pd03Actions {
+        top: 10px;
+
+        & a {
+            opacity: 1;
+            visibility: visible;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+}
 
 // Items offer 
 .gm_trendingItem_offer {
@@ -451,7 +661,8 @@
                 color: var(--color-white);
                 background: var(--secondary-color);
             }
-            & .gm_timerSeparator{
+
+            & .gm_timerSeparator {
                 background: transparent;
             }
         }
