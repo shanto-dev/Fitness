@@ -35,7 +35,8 @@
                 color: var(--color-yellow);
                 background: transparent;
                 padding: 14px 14.4px;
-                & span{
+
+                & span {
                     font-size: 31px;
                 }
             }
@@ -43,6 +44,32 @@
     }
 }
 
+// Product Filter button 
+.gm_NewCollfilter_nav {
+    position: relative;
+    @include displayFlex(flex, end, center, row);
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+
+    & li {
+        padding: 11px 23px;
+        border: 1px solid rgba(231, 231, 231, 1);
+        border-radius: unset;
+        background: var(--color-background);
+        cursor: pointer;
+        transition: var(--transition-base);
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: var(--text-color);
+
+        &:hover {
+            background: var(--secondary-color);
+            color: var(--color-white);
+        }
+    }
+}
 
 // Offer Product 
 .gm_offerPd_deal {

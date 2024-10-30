@@ -319,8 +319,8 @@ var swiper = new Swiper('.gm_offerPd_deal', {
         disableOnInteraction: false,
     },
     pagination: {
-      el: ".gm_offerPd_pagin",
-      clickable: true,
+        el: ".gm_offerPd_pagin",
+        clickable: true,
     },
     breakpoints: {
         768: {
@@ -341,26 +341,28 @@ var swiper = new Swiper('.gm_offerPd_deal', {
 /*==================================
 * Product Tab  
 ==================================*/
-function openCity(evt, cityName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
+window.addEventListener('load', function () {
+    const shuffleWrapper = document.querySelector('.gm_ncollPDshuffle_wrap');
+    if (shuffleWrapper) {
+        const Shuffle = window.Shuffle;
+        const grid = new Shuffle(shuffleWrapper, {
+            itemSelector: '.gm_ncollPD_item',
+            sizer: '.shuf_sizer',
+        });
 
-    // Hide all tab contents
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
+        // Select all filter nav items
+        const filterItems = document.querySelectorAll('.gm_NewCollfilter_nav li');
+        filterItems.forEach(item => {
+            item.addEventListener('click', function () {
+                filterItems.forEach(el => el.classList.remove('active'));
+                this.classList.add('active');
+                const groupName = this.getAttribute('data-group');
+                grid.filter(groupName);
+            });
+        });
     }
+});
 
-    // Remove the 'active' class from all tab links
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab content and mark the clicked tab as 'active'
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
 
 /*==================================
 * Countdown Timer 
