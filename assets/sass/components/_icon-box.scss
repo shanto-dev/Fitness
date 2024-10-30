@@ -193,3 +193,94 @@
         text-align: right;
     }
 }
+
+// Icon Box 03 
+.gm_iconbox03 {
+    padding: 111px 48px 112px;
+    background: var(--color-shade-background);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    transition: var(--transition-base);
+
+    &__icon {
+        width: 120px;
+        height: 138px;
+        background: var(--color-background);
+        @include displayFlex(flex, center, center, column);
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+        margin: 0 auto;
+        margin-bottom: 40px;
+        box-shadow: 0px 20px 45px rgba(0, 0, 0, 0.04);
+        border: 2px solid var(--color-white);
+
+        & i {
+            color: var(--secondary-color);
+        }
+
+        & svg {
+            fill: var(--secondary-color);
+
+            & path {
+                fill: var(--secondary-color);
+            }
+        }
+
+    }
+
+    &__content {
+        & h3 {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 42px;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+
+            & a {
+                color: inherit;
+                font-size: inherit;
+
+                &:hover {
+                    color: var(--secondary-color);
+                }
+            }
+        }
+
+        & p {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 27px;
+            text-align: center;
+            margin: 0;
+            color: var(--text-color);
+        }
+    }
+
+    &:hover {
+        background: var(--secondary-color);
+
+        & .gm_iconbox03__icon {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+
+            & svg {
+                fill: var(--color-white);
+
+                & path {
+                    fill: var(--color-white);
+                }
+            }
+        }
+
+        & .gm_iconbox03__content {
+            h3 {
+                color: var(--color-white);
+
+                & a:hover {
+                    color: var(--primary-color);
+                }
+            }
+            p{
+                color: var(--color-white);
+            }
+        }
+    }
+}

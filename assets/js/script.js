@@ -1,4 +1,3 @@
-
 /*==================================
 * Sicky Headaer
 ==================================*/
@@ -19,30 +18,40 @@ window.addEventListener("scroll", function () {
 /*==================================
 * Mobile Menu
 ==================================*/
-document.querySelector(".gm_menu_toggler").addEventListener("click", function () {
-    document.querySelector(".gm_mobile-menu").classList.add("active");
-});
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggler = document.querySelector(".gm_menu_toggler");
+    const closeButton = document.querySelector(".gm_mobile-menu .close");
+    const mobileMenu = document.querySelector(".gm_mobile-menu");
 
-document.querySelector(".gm_mobile-menu .close").addEventListener("click", function () {
-    document.querySelector(".gm_mobile-menu").classList.remove("active");
-});
+    if (menuToggler) {
+        menuToggler.addEventListener("click", function () {
+            mobileMenu.classList.add("active");
+        });
+    }
 
-document.querySelectorAll(".gm_mobile-menu ul li.has-submenu i").forEach(function (icon) {
-    icon.addEventListener("click", function () {
-        const submenu = this.nextElementSibling;
-        if (submenu) {
-            submenu.style.display = submenu.style.display === "none" ? "block" : "none";
+    if (closeButton) {
+        closeButton.addEventListener("click", function () {
+            mobileMenu.classList.remove("active");
+        });
+    }
+
+    document.querySelectorAll(".gm_mobile-menu ul li.has-submenu i").forEach(function (icon) {
+        icon.addEventListener("click", function () {
+            const submenu = this.nextElementSibling;
+            if (submenu) {
+                submenu.style.display = submenu.style.display === "none" ? "block" : "none";
+            }
+            this.classList.toggle("icon-rotate");
+        });
+    });
+
+    document.addEventListener("mouseup", function (e) {
+        if (mobileMenu && !mobileMenu.contains(e.target) && e.target !== mobileMenu) {
+            mobileMenu.classList.remove("active");
         }
-        this.classList.toggle("icon-rotate");
     });
 });
 
-document.addEventListener("mouseup", function (e) {
-    const offCanvusMenu = document.querySelector(".gm_mobile-menu");
-    if (offCanvusMenu && !offCanvusMenu.contains(e.target) && e.target !== offCanvusMenu) {
-        offCanvusMenu.classList.remove("active");
-    }
-});
 
 /*==================================
 * Scroll to top Button
@@ -298,12 +307,44 @@ var swiper = new Swiper('.gm_collection_slider', {
 });
 
 /*==================================
+* Offer Product carousel
+==================================*/
+var swiper = new Swiper('.gm_offerPd_deal', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    initialSlide: 0,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".gm_offerPd_pagin",
+      clickable: true,
+    },
+    breakpoints: {
+        768: {
+            spaceBetween: 30,
+            slidesPerView: 1
+        },
+        992: {
+            spaceBetween: 20,
+            slidesPerView: 2
+        },
+        1280: {
+            spaceBetween: 30,
+            slidesPerView: 2
+        }
+    }
+});
+
+/*==================================
 * Countdown Timer 
 ==================================*/
 document.addEventListener("DOMContentLoaded", () => {
-    const offerTimer = document.querySelector(".gm_offer_timer");
+    const offerTimers = document.querySelectorAll(".gm_offer_timer");
 
-    if (offerTimer) { 
+    offerTimers.forEach((offerTimer) => {
         const offerDate = new Date(offerTimer.getAttribute("data-offer-date")).getTime();
 
         function updateCountdown() {
@@ -317,11 +358,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
                 offerTimer.innerHTML = `<ul>
-                    <li>${days}<span>Days</span> </li>
+                    <li>${days}<span>Days</span></li>
                     <li class="gm_timerSeparator"><span>:</span></li>
-                    <li>${String(hours).padStart(2, '0')}<span>Hrs</span> </li>
+                    <li>${String(hours).padStart(2, '0')}<span>Hrs</span></li>
                     <li class="gm_timerSeparator"><span>:</span></li>
-                    <li>${String(minutes).padStart(2, '0')}<span>Mins</span> </li>
+                    <li>${String(minutes).padStart(2, '0')}<span>Mins</span></li>
                     <li class="gm_timerSeparator"><span>:</span></li>
                     <li>${String(seconds).padStart(2, '0')}<span>Secs</span></li>
                 </ul>`;
@@ -333,7 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const intervalId = setInterval(updateCountdown, 1000);
         updateCountdown();
-    }
+    });
 });
 
 /*==================================
@@ -390,5 +431,3 @@ categoryLinks.forEach(link => {
         images.forEach(img => img.classList.remove('hovered')); // Remove 'hovered' from all images
     });
 });
-
-
