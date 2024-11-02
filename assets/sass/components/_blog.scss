@@ -272,12 +272,15 @@
         padding: 15px 20px 14px;
         background: var(--color-white);
         border: 1px solid var(--color-border2);
-        color: var(--secondary-color);
         gap: 8px;
 
         @include large-screen {
             padding: 13px 20px 12px;
             font-size: 16px;
+        }
+
+        & .gm_btn_text {
+            color: var(--color-primary-button-hover-text);
         }
 
         & i {
@@ -321,11 +324,14 @@
 
         & .gm_primary-btn {
             background: transparent;
-            color: var(--color-white);
             border-color: var(--color-white);
 
-            &::after {
-                background: var(--secondary-color);
+            & .gm_btn_text {
+                color: var(--color-primary-button-text);
+            }
+
+            & .gm_btnShape {
+                background: var(--color-primary-button-hover-text);
             }
 
             &:hover {

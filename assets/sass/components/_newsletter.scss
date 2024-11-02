@@ -91,35 +91,13 @@
 
     button[type="submit"] {
         color: var(--color-white);
-        font-size: 18px;
-        font-weight: 700;
-        line-height: 25.2px;
-        letter-spacing: 0.05em;
-        text-align: left;
-        padding: 19px 96px 19px 32px;
-        border: 1px solid var(--secondary-color);
-        position: relative;
-        text-transform: uppercase;
 
-        span {
-            padding: 0;
-            background-color: var(--secondary-color);
-            width: 64px;
+        & span.btn_icon {
             height: 64px;
-            @include displayFlex(inline-flex, center, center, column);
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-
-        svg {
-            padding: 4px;
-            height: 24px;
-            width: 24px;
         }
 
         @include portrait-phone {
-            max-width: 232px;
+            max-width: 229px;
         }
     }
 }

@@ -270,6 +270,7 @@
             line-height: 42px;
             margin-bottom: 4px;
             text-transform: uppercase;
+            transform: var(--transition-base);
 
             @include large-screen {
                 font-size: 28px;
@@ -293,6 +294,7 @@
             text-align: center;
             margin: 0;
             color: var(--text-color);
+            transition: var(--transition-base);
         }
     }
 

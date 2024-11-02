@@ -232,50 +232,101 @@ svg {
 // Button Style 
 .gm_primary-btn {
     position: relative;
-    padding: 19px 32px 20px;
+    padding: 20px 32px 19px;
     border-radius: 0;
+    overflow: hidden;
+    vertical-align: middle;
+    border: none;
+    outline: none;
+    display: inline-block;
+    z-index: 2;
     border: 0;
     font-family: var(--body-font);
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 25px;
-    letter-spacing: 0.05em;
-    text-align: left;
     background: var(--color-primary-button);
-    color: var(--color-primary-button-text);
-    text-transform: uppercase;
-    @include displayFlex(inline-flex, center, center, row);
-    column-gap: 16px;
-    z-index: 1;
+    transition: var(--transition-base);
 
-    &>svg {
-        padding: 4px;
-        width: 24px;
-        height: 24px;
+
+    & .gm_btn_text {
+        position: relative;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 25px;
+        letter-spacing: 0.05em;
+        color: var(--color-primary-button-text);
+        text-transform: uppercase;
+        @include displayFlex(inline-flex, center, center, row);
+        column-gap: 16px;
+        z-index: 1;
+        transition: var(--transition-base);
+
+        &>svg {
+            padding: 4px;
+            width: 24px;
+            height: 24px;
+            position: relative;
+            top: -1px;
+        }
     }
 
-    &::after {
-        content: "";
+
+    & .gm_btnShape {
+        display: inline-block;
         position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 0;
+        width: 25%;
         height: 100%;
         background: var(--color-primary-button-hover);
-        z-index: -1;
-        transition: 0.35s all;
+        transform: translateY(150%);
+        border-radius: 50%;
+        left: calc((var(--b) - 1) * 25%);
+        transition: 0.5s;
+        transition-delay: calc((var(--b) - 1) * 0.1s);
+        z-index: 1;
+    }
+
+    & .gm_btnShape:nth-child(1) {
+        --b: 1;
+    }
+
+    & .gm_btnShape:nth-child(2) {
+        --b: 2;
+    }
+
+    & .gm_btnShape:nth-child(3) {
+        --b: 3;
+    }
+
+    & .gm_btnShape:nth-child(4) {
+        --b: 4;
+    }
+
+    & .gm_btnShape:nth-child(5) {
+        --b: 5;
+    }
+
+    & .gm_btnShape:nth-child(6) {
+        --b: 6;
+    }
+
+    & .gm_btnShape:nth-child(7) {
+        --b: 7;
+    }
+
+    & .gm_btnShape:nth-child(8) {
+        --b: 8;
+    }
+
+    & .gm_btnShape:nth-child(9) {
+        --b: 9;
     }
 
     &:hover {
-        &::after {
-            width: 100%;
-            left: 0;
-            right: auto;
+        & .gm_btnShape {
+            transform: translateY(0) scale(2);
+            -moz-transform: translateY(0) scale(2);
+            -moz-transform: translateY(0) scale(2);
         }
-
-        color: var(--color-primary-button-text);
     }
+
 }
 
 
@@ -296,7 +347,8 @@ svg {
     text-transform: uppercase;
     @include displayFlex(inline-flex, center, center, row);
     column-gap: 0;
-    z-index: 1;
+    overflow: hidden;
+    vertical-align: middle;
 
     & span.btn_text {
         display: inline-block;
@@ -305,6 +357,9 @@ svg {
         font-weight: inherit;
         line-height: inherit;
         letter-spacing: inherit;
+        position: relative;
+        z-index: 1;
+        transition: var(--transition-base);
     }
 
     & span.btn_icon {
@@ -314,6 +369,8 @@ svg {
         width: 63px;
         height: 62px;
         @include displayFlex(flex, center, center, row);
+        position: relative;
+        z-index: 8;
     }
 
     & svg {
@@ -322,27 +379,72 @@ svg {
         height: 24px;
     }
 
-    &::after {
-        content: "";
+    & .gm_btnShape {
+        display: inline-block;
         position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 0;
+        width: 25%;
         height: 100%;
         background: var(--color-secondary-button-hover);
-        z-index: -1;
-        transition: 0.35s all;
+        transform: translateY(150%);
+        border-radius: 50%;
+        left: calc((var(--b) - 1) * 25%);
+        transition: 0.5s;
+        transition-delay: calc((var(--b) - 1) * 0.1s);
+        z-index: 1;
+    }
+
+    & .gm_btnShape:nth-child(1) {
+        --b: 1;
+    }
+
+    & .gm_btnShape:nth-child(2) {
+        --b: 2;
+    }
+
+    & .gm_btnShape:nth-child(3) {
+        --b: 3;
+    }
+
+    & .gm_btnShape:nth-child(4) {
+        --b: 4;
+    }
+
+    & .gm_btnShape:nth-child(5) {
+        --b: 5;
+    }
+
+    & .gm_btnShape:nth-child(6) {
+        --b: 6;
+    }
+
+    & .gm_btnShape:nth-child(7) {
+        --b: 7;
+    }
+
+    & .gm_btnShape:nth-child(8) {
+        --b: 8;
+    }
+
+    & .gm_btnShape:nth-child(9) {
+        --b: 9;
     }
 
     &:hover {
-        border-color: var(--color-secondary-button-outline-hover);
-        color: var(--color-secondary-button-hover-text);
+        & .gm_btnShape {
+            transform: translateY(0) scale(2);
+            -moz-transform: translateY(0) scale(2);
+            -moz-transform: translateY(0) scale(2);
+        }
+    }
 
-        &::after {
-            width: 100%;
-            left: 0;
-            right: auto;
+    .gm_btn_shapeInner {
+        display: inline-block;
+        position: relative;
+    }
+
+    &:hover {
+        .gm_btn_text {
+            color: var(--color-secondary-button-hover-text);
         }
     }
 }

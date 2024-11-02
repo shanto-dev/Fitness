@@ -376,7 +376,6 @@
         padding: 16px 20px 15px;
         gap: 8px;
         background: var(--color-background);
-        color: var(--secondary-color);
 
         @include large-screen {
             padding: 14px 20px 13px;
@@ -393,12 +392,18 @@
             padding: 1px .6px;
         }
 
-        &::after {
-            background: var(--secondary-color);
+        & .gm_btn_text {
+            color: var(--color-primary-button);
+        }
+
+        & .gm_btnShape {
+            background: var(--color-primary-button);
         }
 
         &:hover {
-            color: var(--color-white);
+            & .gm_btn_text {
+                color: var(--color-white);
+            }
         }
     }
 }
@@ -644,12 +649,14 @@
         font-size: 16px;
         line-height: 30px;
 
-        &:after {
+        & .gm_btnShape {
             background: var(--color-background);
         }
 
         &:hover {
-            color: var(--secondary-color);
+            & .gm_btn_text {
+                color: var(--secondary-color);
+            }
         }
     }
 }
