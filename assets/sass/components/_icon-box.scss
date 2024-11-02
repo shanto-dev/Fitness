@@ -201,6 +201,19 @@
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
     transition: var(--transition-base);
 
+    @include large-screen {
+        padding: 75px 40px 75px;
+    }
+
+    @include screen-992 {
+        padding: 85px 40px 105px;
+    }
+
+    @include screen-768 {
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
     &__icon {
         width: 120px;
         height: 138px;
@@ -210,18 +223,42 @@
         margin: 0 auto;
         margin-bottom: 40px;
         box-shadow: 0px 20px 45px rgba(0, 0, 0, 0.04);
-        border: 2px solid var(--color-white);
+        position: relative;
+        z-index: 2;
+
+        @include large-screen {
+            margin-bottom: 20px;
+        }
 
         & i {
             color: var(--secondary-color);
+            position: relative;
+            z-index: 5;
         }
 
         & svg {
             fill: var(--secondary-color);
+            position: relative;
+            z-index: 5;
 
             & path {
                 fill: var(--secondary-color);
             }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../images/home2/icon-bg.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto;
+            z-index: -1;
+            opacity: 0.3;
         }
 
     }
@@ -233,6 +270,11 @@
             line-height: 42px;
             margin-bottom: 4px;
             text-transform: uppercase;
+
+            @include large-screen {
+                font-size: 28px;
+                line-height: 38px;
+            }
 
             & a {
                 color: inherit;
@@ -278,7 +320,8 @@
                     color: var(--primary-color);
                 }
             }
-            p{
+
+            p {
                 color: var(--color-white);
             }
         }

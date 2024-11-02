@@ -4,6 +4,10 @@
     margin-bottom: 26px;
     position: relative;
 
+    @include screen-460 {
+        padding: 30px;
+    }
+
     &::after {
         position: absolute;
         content: "";
@@ -36,6 +40,11 @@
         font-weight: 500;
         line-height: 30px;
         margin: 0;
+
+        @include screen-768 {
+            font-size: 18px;
+            line-height: 28px;
+        }
     }
 }
 
@@ -84,8 +93,13 @@
         bottom: 0;
     }
 }
+
 .gm_testimonial {
     margin-right: -174px;
+
+    @include screen-460 {
+        margin-right: 12px;
+    }
 }
 
 

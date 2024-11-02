@@ -180,8 +180,29 @@ var swiper = new Swiper('.gm_testimonial', {
         nextEl: '.gm_testi-next',
         prevEl: '.gm_testi-prev',
     },
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
+    breakpoints: {
+        480: {
+            spaceBetween: 15
+        },
+        576: {
+            spaceBetween: 15,
+            slidesPerView: 2
+        },
+        768: {
+            spaceBetween: 20,
+            slidesPerView: 2
+        },
+        992: {
+            spaceBetween: 20,
+            slidesPerView: 3
+        },
+        1280: {
+            spaceBetween: 30,
+            slidesPerView: 3
+        }
+    }
 });
 
 /*==================================
@@ -227,12 +248,34 @@ var swiper = new Swiper('.gm_testimonial-two', {
 ==================================*/
 var swiper = new Swiper('.gm_brand_slider ', {
     loop: true,
-    slidesPerView: 5,
-    spaceBetween: 30,
+    slidesPerView: 1,
+    spaceBetween: 15,
     autoplay: {
         delay: 3100,
         disableOnInteraction: false,
     },
+    breakpoints: {
+        480: {
+            slidesPerView: 2,
+            spaceBetween: 15
+        },
+        576: {
+            slidesPerView: 2,
+            spaceBetween: 20
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 20
+        },
+        992: {
+            slidesPerView: 4,
+            spaceBetween: 20
+        },
+        1280: {
+            slidesPerView: 5,
+            spaceBetween: 30
+        }
+    }
 });
 
 /*==================================
@@ -310,14 +353,14 @@ var swiper = new Swiper('.gm_collection_slider', {
 * Offer Product carousel
 ==================================*/
 var swiper = new Swiper('.gm_offerPd_deal', {
-    loop: true,
+    loop: false,
     slidesPerView: 1,
     spaceBetween: 30,
     initialSlide: 0,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
+    // autoplay: {
+    //     delay: 3000,
+    //     disableOnInteraction: false,
+    // },
     pagination: {
         el: ".gm_offerPd_pagin",
         clickable: true,

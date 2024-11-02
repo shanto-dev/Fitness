@@ -244,7 +244,13 @@
             font-weight: 500;
             line-height: 27px;
             color: var(--text-color);
-            margin-bottom: 40px
+            margin-bottom: 40px;
+
+            @include screen-460 {
+                font-size: 15px;
+                line-height: 24px;
+                margin-bottom: 14px;
+            }
         }
     }
 
@@ -276,6 +282,11 @@
         @include portrait-phone {
             padding: 10px 12px 9px;
             font-size: 13px;
+
+            @include screen-460 {
+                font-size: 12px;
+                padding: 10px 10px 9px;
+            }
 
         }
 

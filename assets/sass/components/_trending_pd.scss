@@ -509,6 +509,23 @@
     border: 1px solid var(--color-white);
     transition: var(--transition-base);
 
+    @include screen-1200-to-1320 {
+        gap: 20px;
+    }
+
+    @include screen-992-to-1199 {
+        gap: 16px;
+    }
+
+    @include screen-768 {
+        gap: 20px;
+    }
+
+    @include screen-460 {
+        gap: 30px;
+        flex-direction: column;
+    }
+
     &__thumb {
         flex: 0 0 auto;
         width: 220px;
@@ -516,6 +533,21 @@
         background: var(--color-shade-background);
         padding: 10px;
         @include displayFlex(flex, center, center, column);
+
+        @include screen-1200-to-1320 {
+            width: 200px;
+        }
+
+        @include screen-992-to-1199 {
+            width: 190px;
+        }
+
+        @include screen-768 {
+            width: 200px;
+        }
+        @include screen-460 {
+            width: 100%;
+        }
 
         & img {
             max-width: 100%;
@@ -548,6 +580,22 @@
         text-align: left;
         margin-bottom: 12px;
         text-transform: uppercase;
+
+        @include screen-1200-to-1320 {
+            font-size: 28px;
+            line-height: 38px;
+        }
+
+        @include screen-992-to-1199 {
+            font-size: 22px;
+            line-height: 26px;
+        }
+
+        @include screen-768 {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 30px;
+        }
 
         & a {
             color: inherit;
@@ -592,6 +640,20 @@
         @include displayFlex(flex, start, center, row);
         gap: 24px;
 
+        @include screen-992-to-1199 {
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+            gap: 8px;
+        }
+
+        @include screen-768 {
+            flex-wrap: wrap;
+            gap: 8px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
         &>* {
             flex: 0 0 auto
         }
@@ -606,6 +668,15 @@
             letter-spacing: 0.05em;
             text-align: left;
             width: 75px;
+
+            @include screen-992-to-1199 {
+                width: unset;
+            }
+
+            @include screen-768 {
+                width: unset;
+                font-size: 16px;
+            }
         }
 
         & .gm_countdown {

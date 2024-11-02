@@ -767,12 +767,45 @@
     & .gm_header_wrapper02 {
         & .logo {
             display: block !important;
-            margin-right: 40px;
+            margin-right: 60px;
+
+            @include screen-768 {
+                margin-right: 0;
+            }
         }
 
-        &>div.col-xl-9 {
-            @include displayFlex(flex, start, center, row);
+        & [class^="col-"]:nth-child(2) {
+            & .logo {
+                display: none !important;
+            }
+        }
 
+        & div.col-xl-9 {
+            @include displayFlex(flex, start, center, row);
+            display: flex !important;
+
+            @include screen-992 {
+                display: none !important;
+            }
+        }
+
+        & .gm_navmenu02 ul {
+            gap: 60px;
+
+            @include large-screen {
+                gap: 28px;
+            }
+
+            & li a {
+                @include large-screen {
+                    font-size: 16px;
+                }
+            }
+        }
+
+
+        & .gm_megamenu02 {
+            left: -350px;
         }
     }
 }
@@ -802,7 +835,7 @@
         }
 
         @include large-screen {
-            padding: 0 48px;
+            padding: 0 40px;
         }
 
         &:before {
@@ -843,6 +876,20 @@
 .gm_header_wrapper02 {
     position: relative;
     background: var(--primary-bg-color);
+
+    @include screen-992 {
+        & [class^="col-"]:nth-child(2) {
+            @include displayFlex(inline-flex, space-between, center, row);
+            gap: 24px;
+        }
+    }
+
+    @include screen-768 {
+        & [class^="col-"]:nth-child(2) {
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
 }
 
 .gm_navmenu02 {
@@ -851,6 +898,10 @@
     &>ul {
         @include displayFlex(flex, start, center, row);
         gap: 80px;
+
+        @include large-screen {
+            gap: 48px
+        }
 
         &>li {
             cursor: pointer;
@@ -1104,12 +1155,36 @@
 // Header 2 Middle 
 .gm_headerMiddle {
     padding: 24px 0 28px;
+
+    & [class^="col-"]:nth-child(1) {
+        width: 23%;
+    }
+
+    & [class^="col-"]:nth-child(2) {
+        width: 77%;
+
+        @include screen-992 {
+            width: 100%;
+        }
+    }
 }
 
 .gm_hd2Info_wrap {
     position: relative;
     @include displayFlex(flex, space-between, center, row);
     gap: 56px;
+
+    @include large-screen {
+        justify-content: flex-end;
+    }
+
+    @include screen-1200-to-1320 {
+        gap: 30px;
+    }
+
+    @include screen-992 {
+        justify-content: center;
+    }
 
     &>* {
         min-width: 278px;
@@ -1173,9 +1248,19 @@
         }
 
     }
+
+    @include large-screen {
+        & .item-single:nth-last-child(1) {
+            display: none;
+        }
+    }
 }
 
 .gm_header_right02 {
+    @include screen-992 {
+        gap: 12px;
+    }
+
     & .gm_menu_toggler {
         width: 40px;
         display: inline-block;

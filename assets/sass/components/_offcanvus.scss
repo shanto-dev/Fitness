@@ -263,6 +263,10 @@
         max-width: 385px;
         width: 100%;
 
+        @include screen-460 {
+            margin: 0 20px;
+        }
+
         input {
             background-color: var(--color-white);
             max-width: 360px;

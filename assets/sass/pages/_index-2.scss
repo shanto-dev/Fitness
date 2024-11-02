@@ -3,6 +3,14 @@
     padding: 56px 56px 38px;
     background: var(--primary-bg-color);
 
+    @include large-screen {
+        padding: 27px 14px 25px;
+    }
+
+    @include screen-1200-to-1320 {
+        padding: 51px 30px 33px;
+    }
+
     & h2 {
         font-size: 56px;
         font-weight: 600;
@@ -11,6 +19,11 @@
         color: var(--color-white);
         margin-bottom: 16px;
         text-transform: uppercase;
+
+        @include large-screen {
+            font-size: 42px;
+            line-height: 60px;
+        }
     }
 
     & p {
@@ -23,12 +36,29 @@
     }
 
     & .gm_countdown {
+        @include screen-992 {
+            max-width: 355px;
+            margin: 0 auto;
+        }
+
         & ul {
             padding: 0;
             background: var(--primary-bg-color);
 
             & li {
                 background: var(--color-yellow);
+
+                @include large-screen {
+                    min-width: 66px;
+                    font-size: 30px;
+                    line-height: 42px;
+                }
+
+                @include screen-460 {
+                    min-width: 64px;
+                    font-size: 28px;
+                    line-height: 40px;
+                }
             }
 
             & .gm_timerSeparator {
@@ -36,8 +66,21 @@
                 background: transparent;
                 padding: 14px 14.4px;
 
+                @include large-screen {
+                    padding: 14px 10px;
+                    min-width: 30px;
+                }
+
+                @include screen-460 {
+                    padding: 14px 7px;
+                    min-width: 22px;
+                }
+
                 & span {
                     font-size: 31px;
+                    @include screen-460{
+                        font-size: 26px;
+                    }
                 }
             }
         }
@@ -51,6 +94,10 @@
     gap: 8px;
     flex-wrap: wrap;
     margin-bottom: 10px;
+
+    @include screen-992 {
+        justify-content: start;
+    }
 
     & li {
         padding: 11px 23px;

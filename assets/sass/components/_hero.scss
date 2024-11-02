@@ -130,6 +130,211 @@
     }
 }
 
+/*========================/ Hero section 02 /=========================== */
+.gm_hero_section02 {
+    position: relative;
+    background: var(--color-shade-background);
+    padding-top: 96px;
+    z-index: 2;
+    overflow: hidden;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 32px;
+        height: 32px;
+        background: transparent;
+        border: 6.5px solid rgba(255, 88, 36, 0.3);
+        left: 44px;
+        bottom: 45px;
+        border-radius: 50%;
+    }
+}
+
+.gm_hero2_shape {
+    position: absolute;
+    bottom: 65px;
+    right: 7%;
+    z-index: -1;
+
+    @include large-screen {
+        right: 2%;
+    }
+
+    @include screenUp-1600 {
+        right: 13.5%;
+    }
+
+    & img {
+        max-width: 100%;
+        width: auto;
+
+    }
+}
+
+.gm_hero3R_pdImg {
+    position: relative;
+
+    @include large-screen {
+        text-align: center;
+    }
+
+    & img {
+        max-width: 100%;
+        clip-path: polygon(50% 0%, 100% 39%, 82.5% 100%, 17.5% 100%, 0% 39%);
+    }
+
+
+}
+
+.gm_hero_content_02 {
+    position: relative;
+    padding: 0 0 96px;
+
+    & h4 {
+        font-family: var(--body-font);
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 27px;
+        color: var(--secondary-color);
+        margin: 0;
+    }
+
+    & h2 {
+        font-size: 96px;
+        font-weight: 600;
+        line-height: 115px;
+        margin-bottom: 56px;
+        text-transform: uppercase;
+
+        @include large-screen {
+            font-size: 75px;
+            line-height: 94px;
+            margin-bottom: 46px;
+        }
+
+        @include screen-768 {
+            font-size: 70px;
+            line-height: 89px;
+        }
+
+        @include screen-460 {
+            font-size: 56px;
+            line-height: 68px;
+        }
+    }
+
+    & [class^="col-"]:nth-child(1) {
+        width: 235px;
+
+        @include screen-460 {
+            width: 100%;
+            margin-bottom: 25px;
+        }
+    }
+
+    & [class^="col-"]:nth-child(2) {
+        width: calc(100% - 235px);
+
+        @include screen-460 {
+            width: 100%;
+        }
+
+        &>* {
+            margin-left: 10px;
+        }
+    }
+
+    & p {
+        max-width: 315px;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 27px;
+        margin-bottom: 32px;
+
+        @include large-screen {
+            font-size: 17px;
+            line-height: 27px;
+            margin-bottom: 24px;
+        }
+
+        @include screen-460 {
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
+
+.gm_hero_review {
+    max-width: 205px;
+    width: 100%;
+    background-color: var(--color-background);
+    padding: 24px;
+    box-shadow: 0px 25px 65px rgba(0, 0, 0, 0.05);
+    text-align: center;
+
+    & h3 {
+        font-size: 56px;
+        font-weight: 600;
+        line-height: 73px;
+        margin: 0;
+    }
+
+    & .gm_hero_review_text {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        margin-bottom: 32px;
+        margin: 0;
+    }
+
+    & .star-rating {
+        position: relative;
+        @include displayFlex(inline-flex, start, center, row);
+        gap: 2px;
+        margin-bottom: 8px;
+
+        & svg {
+            fill: var(--secondary-color);
+            width: 20px;
+            height: 20px;
+        }
+
+        & p {
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 91%;
+            height: 100%;
+
+            & .fillSvg {
+                min-width: 108px;
+                @include displayFlex(inline-flex, start, center, row);
+                top: 0;
+                left: 0;
+                position: absolute;
+                gap: 2px;
+                flex-wrap: nowrap;
+                fill: var(--secondary-color);
+            }
+
+            & svg {
+                fill: var(--secondary-color);
+                width: 20px;
+                height: 20px;
+
+                & path {
+                    fill: var(--secondary-color);
+                }
+            }
+        }
+
+    }
+
+}
+
+
 /*========================/ Hero section 03 /=========================== */
 .gm_hero_section03 {
     min-height: 720px;
