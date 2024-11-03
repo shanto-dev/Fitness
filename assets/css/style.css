@@ -4280,37 +4280,61 @@ p {
 .gm_pd01Reviws {
   position: relative; }
   .gm_pd01Reviws .star-rating {
-    font-family: 'Font Awesome 6 Free';
-    float: none;
-    overflow: hidden;
     position: relative;
-    height: auto;
-    line-height: 1;
-    font-size: 19px;
-    width: auto;
-    margin: 0; }
-    .gm_pd01Reviws .star-rating::before {
-      content: "\f005\f005\f005\f005\f005";
-      font-weight: 400;
-      color: #ffb400;
-      float: left;
-      position: relative;
-      display: inline-block; }
-    .gm_pd01Reviws .star-rating span {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    gap: 2px; }
+    .gm_pd01Reviws .star-rating svg {
+      fill: var(--color-yellow);
+      width: 20px;
+      height: 20px; }
+      .gm_pd01Reviws .star-rating svg path {
+        fill: var(--color-yellow); }
+    .gm_pd01Reviws .star-rating p {
       overflow: hidden;
-      float: left;
       top: 0;
       left: 0;
       position: absolute;
-      width: 90%;
+      width: 91.5%;
       height: 100%; }
-      .gm_pd01Reviws .star-rating span:after {
-        content: "\f005\f005\f005\f005\f005";
-        font-weight: 900;
-        color: #ffb400;
+      .gm_pd01Reviws .star-rating p .fillSvg {
+        min-width: 108px;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: start;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
         top: 0;
+        left: 0;
         position: absolute;
-        left: 0; }
+        gap: 2px;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap; }
+      .gm_pd01Reviws .star-rating p svg {
+        width: 20px;
+        height: 20px;
+        fill: var(--color-yellow); }
+        .gm_pd01Reviws .star-rating p svg path {
+          fill: var(--color-yellow); }
 
 .gm_trendingItems {
   position: relative; }

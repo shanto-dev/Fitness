@@ -1,11 +1,11 @@
-
-.nCollection01_Row{
-   & > .col-xl-6{
-        @include large-screen{
+.nCollection01_Row {
+    &>.col-xl-6 {
+        @include large-screen {
             order: 1;
         }
     }
 }
+
 // Product 01 
 .gm_productItem01 {
     position: relative;
@@ -143,42 +143,48 @@
     position: relative;
 
     & .star-rating {
-        font-family: 'Font Awesome 6 Free';
-        float: none;
-        overflow: hidden;
         position: relative;
-        height: auto;
-        line-height: 1;
-        font-size: 19px;
-        width: auto;
-        margin: 0;
+        @include displayFlex(inline-flex, start, center, row);
+        gap: 2px;
 
-        &::before {
-            content: "\f005\f005\f005\f005\f005";
-            font-weight: 400;
-            color: #ffb400;
-            float: left;
-            position: relative;
-            display: inline-block;
+        & svg {
+            fill: var(--color-yellow);
+            width: 20px;
+            height: 20px;
+
+            & path {
+                fill: var(--color-yellow);
+            }
         }
 
-        & span {
+        & p {
             overflow: hidden;
-            float: left;
             top: 0;
             left: 0;
             position: absolute;
-            width: 90%;
+            width: 91.5%;
             height: 100%;
 
-            &:after {
-                content: "\f005\f005\f005\f005\f005";
-                font-weight: 900;
-                color: #ffb400;
+            & .fillSvg {
+                min-width: 108px;
+                @include displayFlex(inline-flex, start, center, row);
                 top: 0;
-                position: absolute;
                 left: 0;
+                position: absolute;
+                gap: 2px;
+                flex-wrap: nowrap;
+            }
+
+            & svg {
+                width: 20px;
+                height: 20px;
+                fill: var(--color-yellow);
+
+                & path {
+                    fill: var(--color-yellow);
+                }
             }
         }
+
     }
 }
