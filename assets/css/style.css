@@ -2666,13 +2666,29 @@ header.gm_header_section {
   font-size: 18px;
   font-weight: 500;
   line-height: 27px;
-  color: var(--text-color); }
+  color: var(--text-color);
+  position: relative; }
   @media (max-width: 1199.98px) {
     .gm_widget_nav li a {
       font-size: 16px;
       line-height: 25px; } }
+  .gm_widget_nav li a::before {
+    position: absolute;
+    content: "/";
+    left: 0;
+    top: -2px;
+    color: var(--text-color);
+    font-size: 16px;
+    opacity: 0;
+    -webkit-transition: 0.2s all;
+    -o-transition: 0.2s all;
+    transition: 0.2s all; }
   .gm_widget_nav li a:hover {
-    color: var(--secondary-color); }
+    color: var(--secondary-color);
+    padding-left: 10px; }
+    .gm_widget_nav li a:hover::before {
+      opacity: 1;
+      color: inherit; }
 
 .gm_widget_nav li:not(:last-child) {
   margin-bottom: 24px; }
@@ -4447,7 +4463,7 @@ header.gm_header_section {
   flex-direction: row;
   gap: 20px;
   border: 1px solid var(--color-border); }
-  .gm_trendingItem .gm_trendingItem__thumb {
+  .gm_trendingItem__thumb {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto;
@@ -4468,19 +4484,29 @@ header.gm_header_section {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
-    .gm_trendingItem .gm_trendingItem__thumb img {
+    .gm_trendingItem__thumb img {
       max-width: 100%;
       width: auto;
       max-height: 100%;
-      height: auto; }
-  .gm_trendingItem .gm_trendingItem__meta a {
+      height: auto;
+      -webkit-transition: var(--transition-base);
+      -o-transition: var(--transition-base);
+      transition: var(--transition-base);
+      -webkit-transition: opacity 0.5s ease-in-out;
+      -o-transition: opacity 0.5s ease-in-out;
+      transition: opacity 0.5s ease-in-out; }
+    .gm_trendingItem__thumb img:nth-child(2) {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute; }
+  .gm_trendingItem__meta a {
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
     text-align: left;
     color: var(--text-color);
     margin-bottom: 2px; }
-    .gm_trendingItem .gm_trendingItem__meta a:hover {
+    .gm_trendingItem__meta a:hover {
       color: var(--secondary-color); }
   .gm_trendingItem h2 {
     font-family: var(--body-font);
@@ -4494,7 +4520,7 @@ header.gm_header_section {
       font-size: inherit; }
       .gm_trendingItem h2 a:hover {
         color: var(--secondary-color); }
-  .gm_trendingItem .gm_trendingItem__price {
+  .gm_trendingItem__price {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -4571,6 +4597,12 @@ header.gm_header_section {
           stroke: var(--color-white);
           fill: var(--color-white);
           stroke-width: .2px; }
+  .gm_trendingItem:hover img:nth-child(1) {
+    opacity: 0;
+    visibility: hidden; }
+  .gm_trendingItem:hover img:nth-child(2) {
+    opacity: 1;
+    visibility: visible; }
 
 .gm_trendingItem_two {
   position: relative;

@@ -32,14 +32,30 @@
         font-weight: 500;
         line-height: 27px;
         color: var(--text-color);
+        position: relative;
 
         @include large-screen {
             font-size: 16px;
             line-height: 25px;
         }
+        &::before{
+            position: absolute;
+            content: "/";
+            left:0;
+            top: -2px;
+            color: var(--text-color);
+            font-size: 16px;
+            opacity: 0;
+            transition: 0.2s all;
+        }
 
         &:hover {
             color: var(--secondary-color);
+            padding-left: 10px;
+            &::before{
+                opacity: 1;
+                color: inherit;
+            }
         }
 
     }
