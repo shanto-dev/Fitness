@@ -505,13 +505,13 @@
     }
 
     @include screen-1460 {
-        left: -450px;
+        left: -411px;
     }
 
     @include screen-1400 {
-        width: 1160px;
+        width: 1190px;
         padding: 45px;
-        left: -430px;
+        left: -385px;
     }
 }
 
@@ -806,6 +806,10 @@
 
         & .gm_megamenu02 {
             left: -350px;
+
+            @include large-screen {
+                left: -311px;
+            }
         }
     }
 }
@@ -1094,9 +1098,15 @@
     }
 
     @include screen-1400 {
-        width: 1160px;
+        width: 1166px;
         padding: 45px;
-        left: -430px;
+        left: -156px;
+    }
+
+    @include large-screen {
+        width: 1000px;
+        padding: 45px;
+        left: -124px;
     }
 }
 
@@ -1533,9 +1543,9 @@
     position: absolute;
     background-color: var(--primary-bg-color);
     top: calc(100% + 10px);
-    left: -500px;
+    left: -450px;
     z-index: 10;
-    width: 1320px;
+    width: 1290px;
     padding: 60px;
     opacity: 0;
     visibility: hidden;
@@ -1601,9 +1611,9 @@
     }
 
     @include screen-1400 {
-        width: 1160px;
+        width: 1166px;
         padding: 45px;
-        left: -430px;
+        left: -389px;
     }
 }
 
