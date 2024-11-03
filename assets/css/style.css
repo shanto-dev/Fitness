@@ -692,35 +692,48 @@ p {
     opacity: 1; } }
 
 @-webkit-keyframes theme_fadeInDown {
-  from {
+  0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, -50px, 0);
-    transform: translate3d(0, -50px, 0); }
-  to {
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px); }
+  100% {
     opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0); } }
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0); } }
 
 @keyframes theme_fadeInDown {
-  from {
+  0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, -50px, 0);
-    transform: translate3d(0, -50px, 0); }
-  to {
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px); }
+  100% {
     opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0); } }
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0); } }
+
+.fadeInDown {
+  -webkit-animation-name: theme_fadeInDown;
+  animation-name: theme_fadeInDown; }
 
 /******************************** components ******************************/
 /************** header component ****************/
+header.gm_header_section {
+  -webkit-transition: var(--transition-base);
+  -o-transition: var(--transition-base);
+  transition: var(--transition-base); }
+
 .header-sticky.sticky-on {
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   z-index: 50;
-  -webkit-animation: 0.3s theme_fadeInDown;
-  animation: 0.3s theme_fadeInDown; }
+  -webkit-animation: 400ms ease-in-out 0s normal none 1 running theme_fadeInDown;
+  animation: 400ms ease-in-out 0s normal none 1 running theme_fadeInDown; }
 
 .header-sticky.sticky-on .gm_topbar,
 .header-sticky.sticky-on .gm_topbar03 {

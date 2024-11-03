@@ -1,13 +1,15 @@
 /************** header component ****************/
-// Header Topbar 
+header.gm_header_section {
+    transition: var(--transition-base);
+}
+
 .header-sticky.sticky-on {
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     z-index: 50;
-    -webkit-animation: 0.3s theme_fadeInDown;
-    animation: 0.3s theme_fadeInDown;
+    animation: 400ms ease-in-out 0s normal none 1 running theme_fadeInDown;
 }
 
 .header-sticky.sticky-on .gm_topbar,
@@ -15,6 +17,7 @@
     display: none !important;
 }
 
+// Header Topbar 
 .gm_topbar {
     position: relative;
     background-color: var(--color-dark-light);

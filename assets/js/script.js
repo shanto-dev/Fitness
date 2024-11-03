@@ -133,12 +133,6 @@ gm_stretch();
 window.addEventListener('resize', gm_stretch);
 
 
-
-AOS.init({
-    offset: 0, // Trigger animation only when the element is fully in view
-    duration: 800, // Adjust duration if needed
-});
-
 /*==================================
 * Collection Slide
 ==================================*/
