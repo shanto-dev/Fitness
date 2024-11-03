@@ -177,7 +177,7 @@ svg {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-attachment: scroll;
+  background-attachment: fixed;
   overflow: hidden; }
 
 .gm_section_heading {
@@ -4091,16 +4091,18 @@ p {
   .gm_our_services__image img {
     max-width: 100%;
     width: auto; }
-  @media (max-width: 1199.98px) {
-    .gm_our_services__image .img-one {
-      padding-right: 30px; } }
-  @media (max-width: 991.98px) {
-    .gm_our_services__image .img-one img {
-      max-width: 80%;
-      width: 100%; } }
-  @media (max-width: 575.98px) {
-    .gm_our_services__image .img-one img {
-      max-width: 90%; } }
+  .gm_our_services__image .img-one {
+    width: 470px; }
+    @media (max-width: 1199.98px) {
+      .gm_our_services__image .img-one {
+        padding-right: 30px; } }
+    @media (max-width: 991.98px) {
+      .gm_our_services__image .img-one img {
+        max-width: 80%;
+        width: 100%; } }
+    @media (max-width: 575.98px) {
+      .gm_our_services__image .img-one img {
+        max-width: 90%; } }
   .gm_our_services__image .img-two {
     position: absolute;
     bottom: 60px;
@@ -4146,7 +4148,20 @@ p {
   position: relative; }
   .gm_pd01Thumb img {
     max-width: 100%;
-    max-height: 100%; }
+    max-height: 100%;
+    -webkit-transition: 0.4s all;
+    -o-transition: 0.4s all;
+    transition: 0.4s all; }
+  .gm_pd01Thumb img:nth-child(2) {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden; }
+  .gm_pd01Thumb:hover img:nth-child(1) {
+    opacity: 0;
+    visibility: hidden; }
+  .gm_pd01Thumb:hover img:nth-child(2) {
+    opacity: 1;
+    visibility: visible; }
 
 .gm_productLabels {
   position: absolute;
@@ -4306,7 +4321,7 @@ p {
       top: 0;
       left: 0;
       position: absolute;
-      width: 91.5%;
+      width: 91.2%;
       height: 100%; }
       .gm_pd01Reviws .star-rating p .fillSvg {
         min-width: 108px;
@@ -5962,7 +5977,15 @@ p {
     max-width: 100%;
     width: 100%;
     -o-object-fit: cover;
-    object-fit: cover; }
+    object-fit: cover;
+    -webkit-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    transform: scale(1.03);
+    -webkit-transition: -webkit-transform 0.4s ease-in-out;
+    transition: -webkit-transform 0.4s ease-in-out;
+    -o-transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out; }
   .gm_collection_item .gm_collection_content {
     position: absolute;
     left: 0;
@@ -6007,6 +6030,10 @@ p {
       color: var(--text-color); }
   .gm_collection_item:hover::after {
     opacity: 1; }
+  .gm_collection_item:hover img {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
 
 .gm_collection_nav {
   position: relative;
@@ -6113,10 +6140,16 @@ p {
 .gm_blog_Items {
   position: relative; }
   .gm_blog_Items .gm_blog_thumb {
-    position: relative; }
+    position: relative;
+    overflow: hidden; }
     .gm_blog_Items .gm_blog_thumb img {
       max-width: 100%;
-      width: 100%; }
+      width: 100%;
+      -webkit-transition: -webkit-transform 0.4s ease;
+      transition: -webkit-transform 0.4s ease;
+      -o-transition: transform 0.4s ease;
+      transition: transform 0.4s ease;
+      transition: transform 0.4s ease, -webkit-transform 0.4s ease; }
     @media (max-width: 1199.98px) {
       .gm_blog_Items .gm_blog_thumb.mb-32 {
         margin-bottom: 24px !important; } }
@@ -6256,6 +6289,10 @@ p {
     color: var(--secondary-color); }
     .gm_blog_Items:hover .gm_blog-link::after {
       background: var(--secondary-color); }
+  .gm_blog_Items:hover img {
+    -webkit-transform: scale(1.08);
+    -ms-transform: scale(1.08);
+    transform: scale(1.08); }
 
 @media (max-width: 991.98px) {
   .blogGridRow {
@@ -6617,7 +6654,8 @@ p {
 .gm_inst_social {
   display: block;
   position: relative;
-  z-index: 3; }
+  z-index: 3;
+  overflow: hidden; }
   .gm_inst_social::after {
     position: absolute;
     content: "";
@@ -6636,7 +6674,12 @@ p {
     border-radius: inherit; }
   .gm_inst_social img {
     max-width: 100%;
-    width: 100%; }
+    width: 100%;
+    -webkit-transition: -webkit-transform 0.4s ease;
+    transition: -webkit-transform 0.4s ease;
+    -o-transition: transform 0.4s ease;
+    transition: transform 0.4s ease;
+    transition: transform 0.4s ease, -webkit-transform 0.4s ease; }
   .gm_inst_social i {
     position: absolute;
     font-size: 30px;
@@ -6657,6 +6700,10 @@ p {
     transform: scale(1); }
   .gm_inst_social:hover i {
     opacity: 1; }
+  .gm_inst_social:hover img {
+    -webkit-transform: scale(1.07) rotate(3deg);
+    -ms-transform: scale(1.07) rotate(3deg);
+    transform: scale(1.07) rotate(3deg); }
 
 .gm_testimonial_cnt {
   background: var(--color-shade-background);
@@ -7070,10 +7117,71 @@ p {
   text-transform: uppercase;
   border: 2px solid var(--color-white);
   border-radius: 50%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  -webkit-transition: 0.4s all;
+  -o-transition: 0.4s all;
+  transition: 0.4s all; }
   .gm_video_playBtn:hover {
     border-color: var(--secondary-color);
-    color: var(--secondary-color); }
+    color: var(--secondary-color);
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95); }
+
+.gm_video_playBtn + span {
+  display: none; }
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.popup-content {
+  position: relative;
+  width: 90%;
+  height: 80%;
+  max-width: 1290px; }
+
+.popup-close {
+  position: absolute;
+  top: 5px;
+  right: -50px;
+  font-size: 34px;
+  line-height: 1;
+  border-radius: 50%;
+  color: var(--secondary-color);
+  cursor: pointer;
+  z-index: 10000;
+  border: 1px solid var(--secondary-color);
+  margin: 0;
+  height: 40px;
+  width: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }
+  .popup-close:hover {
+    color: var(--color-white); }
 
 .gm_trainTimer {
   padding: 56px 56px 38px;

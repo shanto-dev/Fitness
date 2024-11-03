@@ -9,6 +9,8 @@
         }
 
         & .img-one {
+            width: 470px;
+
             @include large-screen {
                 padding-right: 30px;
             }
