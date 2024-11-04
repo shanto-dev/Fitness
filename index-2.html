@@ -19,6 +19,9 @@
     <!--Essential Js files-->
     <script src="assets/js/swiper-bundle.min.js" defer="defer"></script>
     <script src="assets/js/shuffle.min.js" defer="defer"></script>
+    <script src="assets/js/gsap.js" defer="defer"></script>
+    <script src="assets/js/gsap-scroll-trigger.js" defer="defer"></script>
+    <script src="assets/js/gsap-split-text.js" defer="defer"></script>
     <script src="assets/js/script.js" defer="defer"></script>
 </head>
 
@@ -211,7 +214,7 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="gm_hero_content_02">
                             <h4>Get 15% off on New Arrival</h4>
-                            <h2>Enjoy Your life & Get fit</h2>
+                            <h2 class="split-text right">Enjoy Your life & Get fit</h2>
                             <div class="row gx-30">
                                 <div class="col-5">
                                     <div class="gm_hero_review">
@@ -273,7 +276,7 @@
                     </div>
                 </div>
             </div>
-            <div class="gm_hero2_shape">
+            <div class="gm_hero2_shape move_anim">
                 <img src="assets/images/hero/hero2-shape.png" alt="Gym">
             </div>
         </section>
@@ -286,7 +289,7 @@
                     <div class="col-md-12 mb-64">
                         <div class="gm_section_heading text-center">
                             <h4 class="gm_section_heading__subtitle">Best Collection</h4>
-                            <h2 class="gm_section_heading__title">Featured Collections</h2>
+                            <h2 class="gm_section_heading__title split-text right">Featured Collections</h2>
                         </div>
                     </div>
                 </div>
@@ -346,7 +349,7 @@
                     <div class="col-lg-6">
                         <div class="gm_section_heading text-start">
                             <h4 class="gm_section_heading__subtitle">New Collections</h4>
-                            <h2 class="gm_section_heading__title">Explore Our Weekly</h2>
+                            <h2 class="gm_section_heading__title split-text right">Explore Our Weekly</h2>
                         </div>
                     </div>
                     <div class="col-lg-6 mt-4 mt-lg-0">
@@ -364,6 +367,7 @@
                         <div class="gm_trendingItem_03">
                             <div class="gm_trendingItem_03__thumb">
                                 <img src="assets/images/trending-pd/trnd-pdlg-02.png" alt="Trending">
+                                <img src="assets/images/trending-pd/trnd-pdlg-02.2.png" alt="Trending">
                                 <div class="gm_pd03Actions">
                                     <a href="javascript:void(0);" class="pd01Wishlist"><i class="far fa-heart"></i></a>
                                     <a href="javascript:void(0);" class="pd01QuickView"><i class="far fa-eye"></i></a>
@@ -425,6 +429,7 @@
                         <div class="gm_trendingItem_03">
                             <div class="gm_trendingItem_03__thumb">
                                 <img src="assets/images/trending-pd/trnd-pdlg-10.png" alt="Trending">
+                                <img src="assets/images/trending-pd/trnd-pdlg-10.2.png" alt="Trending">
                                 <div class="gm_pd03Actions">
                                     <a href="javascript:void(0);" class="pd01Wishlist"><i class="far fa-heart"></i></a>
                                     <a href="javascript:void(0);" class="pd01QuickView"><i class="far fa-eye"></i></a>
@@ -486,6 +491,7 @@
                         <div class="gm_trendingItem_03">
                             <div class="gm_trendingItem_03__thumb">
                                 <img src="assets/images/trending-pd/trnd-pdlg-11.png" alt="Trending">
+                                <img src="assets/images/trending-pd/trnd-pdlg-11.2.png" alt="Trending">
                                 <div class="gm_pd03Actions">
                                     <a href="javascript:void(0);" class="pd01Wishlist"><i class="far fa-heart"></i></a>
                                     <a href="javascript:void(0);" class="pd01QuickView"><i class="far fa-eye"></i></a>
@@ -547,6 +553,7 @@
                         <div class="gm_trendingItem_03">
                             <div class="gm_trendingItem_03__thumb">
                                 <img src="assets/images/trending-pd/trnd-pdlg-09.png" alt="Trending">
+                                <img src="assets/images/trending-pd/trnd-pdlg-09.2.png" alt="Trending">
                                 <div class="gm_pd03Actions">
                                     <a href="javascript:void(0);" class="pd01Wishlist"><i class="far fa-heart"></i></a>
                                     <a href="javascript:void(0);" class="pd01QuickView"><i class="far fa-eye"></i></a>
@@ -608,6 +615,7 @@
                         <div class="gm_trendingItem_03">
                             <div class="gm_trendingItem_03__thumb">
                                 <img src="assets/images/trending-pd/trnd-pdlg-05.png" alt="Trending">
+                                <img src="assets/images/trending-pd/trnd-pdlg-05.2.png" alt="Trending">
                                 <div class="gm_pd03Actions">
                                     <a href="javascript:void(0);" class="pd01Wishlist"><i class="far fa-heart"></i></a>
                                     <a href="javascript:void(0);" class="pd01QuickView"><i class="far fa-eye"></i></a>
@@ -669,6 +677,7 @@
                         <div class="gm_trendingItem_03">
                             <div class="gm_trendingItem_03__thumb">
                                 <img src="assets/images/trending-pd/trnd-pdlg-03.png" alt="Trending">
+                                <img src="assets/images/trending-pd/trnd-pdlg-03.2.png" alt="Trending">
                                 <div class="gm_pd03Actions">
                                     <a href="javascript:void(0);" class="pd01Wishlist"><i class="far fa-heart"></i></a>
                                     <a href="javascript:void(0);" class="pd01QuickView"><i class="far fa-eye"></i></a>
@@ -729,7 +738,8 @@
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 gm_ncollPD_item" data-groups='["all", "mens", "womens"]'>
                         <div class="gm_trendingItem_03">
                             <div class="gm_trendingItem_03__thumb">
-                                <img src="assets/images/trending-pd/trnd-pdlg-12.png" alt="Trending">
+                                <img src="assets/images/trending-pd/trnd-pdlg-07.png" alt="Trending">
+                                <img src="assets/images/trending-pd/trnd-pdlg-07.2.png" alt="Trending">
                                 <div class="gm_pd03Actions">
                                     <a href="javascript:void(0);" class="pd01Wishlist"><i class="far fa-heart"></i></a>
                                     <a href="javascript:void(0);" class="pd01QuickView"><i class="far fa-eye"></i></a>
@@ -791,6 +801,7 @@
                         <div class="gm_trendingItem_03">
                             <div class="gm_trendingItem_03__thumb">
                                 <img src="assets/images/trending-pd/trnd-pdlg-13.png" alt="Trending">
+                                <img src="assets/images/trending-pd/trnd-pdlg-13.2.png" alt="Trending">
                                 <div class="gm_pd03Actions">
                                     <a href="javascript:void(0);" class="pd01Wishlist"><i class="far fa-heart"></i></a>
                                     <a href="javascript:void(0);" class="pd01QuickView"><i class="far fa-eye"></i></a>
@@ -894,7 +905,7 @@
                     </div>
                     <div class="col-lg-5">
                         <div class="gm_trainTimer">
-                            <h2>Train hard stay strong</h2>
+                            <h2 class="split-text right">Train hard stay strong</h2>
                             <p>Aliqua id fugiat irure ex duis ea quis id quis ad et Sunt </p>
                             <div class="gm_countdown">
                                 <div class="gm_offer_timer" data-offer-date="2024-11-18T00:00:00"></div>
@@ -913,7 +924,7 @@
                     <div class="col-md-7">
                         <div class="gm_section_heading text-start">
                             <h4 class="gm_section_heading__subtitle">Testimonial</h4>
-                            <h2 class="gm_section_heading__title">Customers Says About Us</h2>
+                            <h2 class="gm_section_heading__title split-text right">Customers Says About Us</h2>
                         </div>
                     </div>
                     <div class="col-md-5">
@@ -1194,7 +1205,7 @@
                     <div class="col-md-12 mb-64">
                         <div class="gm_section_heading text-center">
                             <h4 class="gm_section_heading__subtitle">Grab Your Offer</h4>
-                            <h2 class="gm_section_heading__title">Deal Of This Week</h2>
+                            <h2 class="gm_section_heading__title split-text right">Deal Of This Week</h2>
                         </div>
                     </div>
                 </div>
@@ -1206,6 +1217,7 @@
                                     <div class="gm_trendingItem_offer">
                                         <div class="gm_trendingItem_offer__thumb">
                                             <img src="assets/images/trending-pd/trnd-pdmlg-01.png" alt="Trending">
+                                            <img src="assets/images/trending-pd/trnd-pdmlg-01.2.png" alt="Trending">
                                         </div>
                                         <div class="gm_trendingItem_offer__centent">
                                             <div class="gm_trendingItem_offer__meta">
@@ -1231,6 +1243,7 @@
                                     <div class="gm_trendingItem_offer">
                                         <div class="gm_trendingItem_offer__thumb">
                                             <img src="assets/images/trending-pd/trnd-pdmlg-02.png" alt="Trending">
+                                            <img src="assets/images/trending-pd/trnd-pdmlg-02.2.png" alt="Trending">
                                         </div>
                                         <div class="gm_trendingItem_offer__centent">
                                             <div class="gm_trendingItem_offer__meta">
@@ -1256,6 +1269,7 @@
                                     <div class="gm_trendingItem_offer">
                                         <div class="gm_trendingItem_offer__thumb">
                                             <img src="assets/images/trending-pd/trnd-pdmlg-03.png" alt="Trending">
+                                            <img src="assets/images/trending-pd/trnd-pdmlg-03.2.png" alt="Trending">
                                         </div>
                                         <div class="gm_trendingItem_offer__centent">
                                             <div class="gm_trendingItem_offer__meta">
@@ -1293,7 +1307,7 @@
                     <div class="col-md-12 mb-64">
                         <div class="gm_section_heading">
                             <h4 class="gm_section_heading__subtitle">Blog & News</h4>
-                            <h2 class="gm_section_heading__title">Read From Latest Blog</h2>
+                            <h2 class="gm_section_heading__title split-text right">Read From Latest Blog</h2>
                         </div>
                     </div>
                 </div>

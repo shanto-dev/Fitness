@@ -38,10 +38,11 @@
             font-size: 16px;
             line-height: 25px;
         }
-        &::before{
+
+        &::before {
             position: absolute;
             content: "/";
-            left:0;
+            left: 0;
             top: -2px;
             color: var(--text-color);
             font-size: 16px;
@@ -52,7 +53,8 @@
         &:hover {
             color: var(--secondary-color);
             padding-left: 10px;
-            &::before{
+
+            &::before {
                 opacity: 1;
                 color: inherit;
             }
@@ -449,6 +451,25 @@
                 & span {
                     background: var(--primary-bg-color);
                 }
+            }
+        }
+    }
+}
+
+.gm_footer_02 .gm_subscribe_widget {
+    & input[type="email"] {
+        background: transparent;
+    }
+
+    & button[type="submit"] {
+        background: var(--secondary-color);
+        & span{
+            background: transparent;
+        }
+        &:hover{
+            background: var(--primary-bg-color);
+            & span{
+                background: transparent;
             }
         }
     }

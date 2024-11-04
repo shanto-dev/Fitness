@@ -664,6 +664,14 @@ p {
   --bs-gutter-y: 40px; }
 
 /******************************* theme css **********************************/
+.fadeInDown {
+  -webkit-animation-name: theme_fadeInDown;
+  animation-name: theme_fadeInDown; }
+
+.move_anim img {
+  -webkit-animation: movebounce 5s linear infinite;
+  animation: movebounce 5s linear infinite; }
+
 @-webkit-keyframes theme_fadeInUp {
   0% {
     -webkit-transform: translateY(30px);
@@ -677,6 +685,7 @@ p {
     -webkit-transform: translateY(0);
     transform: translateY(0);
     opacity: 1; } }
+
 @keyframes theme_fadeInUp {
   0% {
     -webkit-transform: translateY(30px);
@@ -715,9 +724,27 @@ p {
     -ms-transform: translateY(0);
     transform: translateY(0); } }
 
-.fadeInDown {
-  -webkit-animation-name: theme_fadeInDown;
-  animation-name: theme_fadeInDown; }
+@-webkit-keyframes movebounce {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  50% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px); }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@keyframes movebounce {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  50% {
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px); }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
 
 /******************************** components ******************************/
 /************** header component ****************/
@@ -3033,6 +3060,18 @@ header.gm_header_section {
     .gm_subscribe_widget .subsCribe-form button[type="submit"]:hover span {
       background: var(--primary-bg-color); }
 
+.gm_footer_02 .gm_subscribe_widget input[type="email"] {
+  background: transparent; }
+
+.gm_footer_02 .gm_subscribe_widget button[type="submit"] {
+  background: var(--secondary-color); }
+  .gm_footer_02 .gm_subscribe_widget button[type="submit"] span {
+    background: transparent; }
+  .gm_footer_02 .gm_subscribe_widget button[type="submit"]:hover {
+    background: var(--primary-bg-color); }
+    .gm_footer_02 .gm_subscribe_widget button[type="submit"]:hover span {
+      background: transparent; }
+
 /****************** offcanvus start **************/
 .offcanvus-box {
   width: 425px;
@@ -3653,7 +3692,8 @@ header.gm_header_section {
 
 /*========================/ Hero section 03 /=========================== */
 .gm_hero_section03 {
-  min-height: 720px; }
+  min-height: 720px;
+  background-attachment: scroll; }
   @media (max-width: 991.98px) {
     .gm_hero_section03 {
       background-size: auto;
@@ -4489,9 +4529,6 @@ header.gm_header_section {
       width: auto;
       max-height: 100%;
       height: auto;
-      -webkit-transition: var(--transition-base);
-      -o-transition: var(--transition-base);
-      transition: var(--transition-base);
       -webkit-transition: opacity 0.5s ease-in-out;
       -o-transition: opacity 0.5s ease-in-out;
       transition: opacity 0.5s ease-in-out; }
@@ -4635,7 +4672,10 @@ header.gm_header_section {
       max-width: 100%;
       width: auto;
       max-height: 100%;
-      height: auto; }
+      height: auto;
+      -webkit-transition: opacity 0.4s ease-in-out;
+      -o-transition: opacity 0.4s ease-in-out;
+      transition: opacity 0.4s ease-in-out; }
   .gm_trendingItem_two .gm_pd02Actions {
     position: absolute;
     opacity: 0;
@@ -4742,6 +4782,12 @@ header.gm_header_section {
   .gm_trendingItem_two:hover .gm_pd02Actions {
     opacity: 1;
     bottom: 4px; }
+  .gm_trendingItem_two:hover .gm_trendingItem__thumb img:nth-child(1) {
+    opacity: 0;
+    visibility: hidden; }
+  .gm_trendingItem_two:hover .gm_trendingItem__thumb img:nth-child(2) {
+    opacity: 1;
+    visibility: visible; }
 
 .gm_trendingItem_03 {
   position: relative; }
@@ -4770,7 +4816,14 @@ header.gm_header_section {
       -o-object-fit: cover;
       object-fit: cover;
       max-height: 264px;
-      height: auto; }
+      height: auto;
+      -webkit-transition: opacity 0.5s ease-in-out;
+      -o-transition: opacity 0.5s ease-in-out;
+      transition: opacity 0.5s ease-in-out; }
+    .gm_trendingItem_03__thumb img:nth-child(2) {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden; }
   .gm_trendingItem_03__centent {
     padding: 16px 0 0; }
     .gm_trendingItem_03__centent h2 {
@@ -4937,6 +4990,12 @@ header.gm_header_section {
         height: 18px; }
         .gm_trendingItem_03 .star-rating p svg path {
           fill: var(--color-yellow); }
+  .gm_trendingItem_03:hover img:nth-child(1) {
+    opacity: 0;
+    visibility: visible; }
+  .gm_trendingItem_03:hover img:nth-child(2) {
+    opacity: 1;
+    visibility: visible; }
 
 .gm_pd03Actions {
   position: absolute;
@@ -5072,7 +5131,14 @@ header.gm_header_section {
       max-width: 100%;
       width: auto;
       max-height: 100%;
-      height: auto; }
+      height: auto;
+      -webkit-transition: opacity 0.6s ease-in-out;
+      -o-transition: opacity 0.6s ease-in-out;
+      transition: opacity 0.6s ease-in-out; }
+    .gm_trendingItem_offer__thumb img:nth-child(2) {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden; }
   .gm_trendingItem_offer__meta a {
     font-size: 16px;
     font-weight: 500;
@@ -5244,6 +5310,12 @@ header.gm_header_section {
           background: transparent; }
   .gm_trendingItem_offer:hover {
     border-color: var(--secondary-color); }
+    .gm_trendingItem_offer:hover img:nth-child(1) {
+      opacity: 0;
+      visibility: hidden; }
+    .gm_trendingItem_offer:hover img:nth-child(2) {
+      opacity: 1;
+      visibility: visible; }
 
 .gm_trendingItem_offer:hover .gm_offerPd_cnt .gm_countdown ul {
   background: var(--secondary-color); }

@@ -1,3 +1,13 @@
+.fadeInDown {
+    -webkit-animation-name: theme_fadeInDown;
+    animation-name: theme_fadeInDown;
+}
+
+.move_anim img {
+    -webkit-animation: movebounce 5s linear infinite;
+    animation: movebounce 5s linear infinite;
+}
+
 @keyframes theme_fadeInUp {
     0% {
         transform: translateY(30px);
@@ -31,8 +41,14 @@
         transform: translateY(0);
     }
 }
-
-.fadeInDown {
-    -webkit-animation-name: theme_fadeInDown;
-    animation-name: theme_fadeInDown;
+@keyframes movebounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }

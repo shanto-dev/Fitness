@@ -339,6 +339,7 @@
 /*========================/ Hero section 03 /=========================== */
 .gm_hero_section03 {
     min-height: 720px;
+    background-attachment: scroll;
 
     @include screen-992 {
         background-size: auto;
